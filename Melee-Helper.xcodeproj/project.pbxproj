@@ -8,17 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		FABABC372C1B64DB00654DE6 /* Melee_HelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */; };
-		FABABC392C1B64DB00654DE6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC382C1B64DB00654DE6 /* ContentView.swift */; };
+		FABABC392C1B64DB00654DE6 /* MeleeHomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC382C1B64DB00654DE6 /* MeleeHomeScreenView.swift */; };
 		FABABC3B2C1B64DD00654DE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FABABC3A2C1B64DD00654DE6 /* Assets.xcassets */; };
 		FABABC3E2C1B64DD00654DE6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FABABC3D2C1B64DD00654DE6 /* Preview Assets.xcassets */; };
+		FABABC452C1B65CD00654DE6 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC442C1B65CD00654DE6 /* Character.swift */; };
+		FABABC492C1B6AB800654DE6 /* CharacterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC482C1B6AB800654DE6 /* CharacterData.swift */; };
+		FABABC4B2C1B6EBD00654DE6 /* MeleeCharacterTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC4A2C1B6EBD00654DE6 /* MeleeCharacterTitleView.swift */; };
+		FABABC4D2C1B739800654DE6 /* MeleeCharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC4C2C1B739800654DE6 /* MeleeCharacterDetailView.swift */; };
+		FABABC512C1B74A600654DE6 /* MainBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC502C1B74A600654DE6 /* MainBackgroundView.swift */; };
+		FABABC542C1B777500654DE6 /* MeleeHomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC532C1B777500654DE6 /* MeleeHomeScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FABABC332C1B64DB00654DE6 /* Melee-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Melee-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Melee_HelperApp.swift; sourceTree = "<group>"; };
-		FABABC382C1B64DB00654DE6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FABABC382C1B64DB00654DE6 /* MeleeHomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeHomeScreenView.swift; sourceTree = "<group>"; };
 		FABABC3A2C1B64DD00654DE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FABABC3D2C1B64DD00654DE6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FABABC442C1B65CD00654DE6 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		FABABC482C1B6AB800654DE6 /* CharacterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterData.swift; sourceTree = "<group>"; };
+		FABABC4A2C1B6EBD00654DE6 /* MeleeCharacterTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeCharacterTitleView.swift; sourceTree = "<group>"; };
+		FABABC4C2C1B739800654DE6 /* MeleeCharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeCharacterDetailView.swift; sourceTree = "<group>"; };
+		FABABC502C1B74A600654DE6 /* MainBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBackgroundView.swift; sourceTree = "<group>"; };
+		FABABC532C1B777500654DE6 /* MeleeHomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeHomeScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +63,11 @@
 		FABABC352C1B64DB00654DE6 /* Melee-Helper */ = {
 			isa = PBXGroup;
 			children = (
+				FABABC522C1B76B800654DE6 /* ViewModels */,
 				FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */,
-				FABABC382C1B64DB00654DE6 /* ContentView.swift */,
+				FABABC4E2C1B748600654DE6 /* Views */,
+				FABABC472C1B6AB200654DE6 /* Data */,
+				FABABC462C1B68D800654DE6 /* Models */,
 				FABABC3A2C1B64DD00654DE6 /* Assets.xcassets */,
 				FABABC3C2C1B64DD00654DE6 /* Preview Content */,
 			);
@@ -65,6 +80,49 @@
 				FABABC3D2C1B64DD00654DE6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FABABC462C1B68D800654DE6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FABABC442C1B65CD00654DE6 /* Character.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FABABC472C1B6AB200654DE6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FABABC482C1B6AB800654DE6 /* CharacterData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FABABC4E2C1B748600654DE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FABABC382C1B64DB00654DE6 /* MeleeHomeScreenView.swift */,
+				FABABC4C2C1B739800654DE6 /* MeleeCharacterDetailView.swift */,
+				FABABC4A2C1B6EBD00654DE6 /* MeleeCharacterTitleView.swift */,
+				FABABC4F2C1B748B00654DE6 /* Helpers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FABABC4F2C1B748B00654DE6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FABABC502C1B74A600654DE6 /* MainBackgroundView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FABABC522C1B76B800654DE6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FABABC532C1B777500654DE6 /* MeleeHomeScreenViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +195,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FABABC392C1B64DB00654DE6 /* ContentView.swift in Sources */,
+				FABABC392C1B64DB00654DE6 /* MeleeHomeScreenView.swift in Sources */,
+				FABABC492C1B6AB800654DE6 /* CharacterData.swift in Sources */,
+				FABABC452C1B65CD00654DE6 /* Character.swift in Sources */,
+				FABABC4B2C1B6EBD00654DE6 /* MeleeCharacterTitleView.swift in Sources */,
+				FABABC4D2C1B739800654DE6 /* MeleeCharacterDetailView.swift in Sources */,
 				FABABC372C1B64DB00654DE6 /* Melee_HelperApp.swift in Sources */,
+				FABABC542C1B777500654DE6 /* MeleeHomeScreenViewModel.swift in Sources */,
+				FABABC512C1B74A600654DE6 /* MainBackgroundView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

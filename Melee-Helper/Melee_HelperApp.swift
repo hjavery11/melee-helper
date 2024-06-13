@@ -11,7 +11,7 @@ import SwiftUI
 struct Melee_HelperApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MeleeHomeScreenView()
         }
     }
 }
