@@ -15,9 +15,6 @@ struct Character:Identifiable, Hashable {
     let description: String
     
     
-    func recognizeCharacter(from image: UIImage) -> Character? {
-        // Simulate character recognition with a random character
-        return CharacterData.allCharacters.randomElement()
-    }
+   
 }
 

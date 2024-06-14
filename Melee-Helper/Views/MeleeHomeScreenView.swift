@@ -37,7 +37,7 @@ struct MeleeHomeScreenView: View {
                 .toolbarColorScheme(.dark, for: .tabBar)
             
         }
-        .tint(Color.black)
+        .tint(Color(.label))
         
         
         

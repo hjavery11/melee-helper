@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FA2A7AE22C1C06EC008870EC /* MeleeCharacterGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7AE12C1C06EC008870EC /* MeleeCharacterGridView.swift */; };
 		FA2A7AE72C1C09C9008870EC /* MeleeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7AE62C1C09C9008870EC /* MeleeImageView.swift */; };
+		FA2A7AE92C1C1505008870EC /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7AE82C1C1505008870EC /* CameraView.swift */; };
+		FA2A7AEB2C1C154F008870EC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7AEA2C1C154F008870EC /* CameraViewController.swift */; };
 		FABABC372C1B64DB00654DE6 /* Melee_HelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */; };
 		FABABC392C1B64DB00654DE6 /* MeleeHomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC382C1B64DB00654DE6 /* MeleeHomeScreenView.swift */; };
 		FABABC3B2C1B64DD00654DE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FABABC3A2C1B64DD00654DE6 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 /* Begin PBXFileReference section */
 		FA2A7AE12C1C06EC008870EC /* MeleeCharacterGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeCharacterGridView.swift; sourceTree = "<group>"; };
 		FA2A7AE62C1C09C9008870EC /* MeleeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeImageView.swift; sourceTree = "<group>"; };
+		FA2A7AE82C1C1505008870EC /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		FA2A7AEA2C1C154F008870EC /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		FABABC332C1B64DB00654DE6 /* Melee-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Melee-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Melee_HelperApp.swift; sourceTree = "<group>"; };
 		FABABC382C1B64DB00654DE6 /* MeleeHomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeHomeScreenView.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 			isa = PBXGroup;
 			children = (
 				FA2A7AE62C1C09C9008870EC /* MeleeImageView.swift */,
+				FA2A7AE82C1C1505008870EC /* CameraView.swift */,
+				FA2A7AEA2C1C154F008870EC /* CameraViewController.swift */,
 			);
 			path = "Second Screen";
 			sourceTree = "<group>";
@@ -222,8 +228,10 @@
 				FABABC492C1B6AB800654DE6 /* CharacterData.swift in Sources */,
 				FABABC452C1B65CD00654DE6 /* Character.swift in Sources */,
 				FABABC4B2C1B6EBD00654DE6 /* MeleeCharacterTitleView.swift in Sources */,
+				FA2A7AEB2C1C154F008870EC /* CameraViewController.swift in Sources */,
 				FABABC4D2C1B739800654DE6 /* MeleeCharacterDetailView.swift in Sources */,
 				FABABC372C1B64DB00654DE6 /* Melee_HelperApp.swift in Sources */,
+				FA2A7AE92C1C1505008870EC /* CameraView.swift in Sources */,
 				FA2A7AE72C1C09C9008870EC /* MeleeImageView.swift in Sources */,
 				FABABC542C1B777500654DE6 /* MeleeCharacterGridViewModel.swift in Sources */,
 				FABABC512C1B74A600654DE6 /* MainBackgroundView.swift in Sources */,
@@ -363,6 +371,7 @@
 				DEVELOPMENT_TEAM = 6P3ZM853J8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to use your camera to detect a character";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -392,6 +401,7 @@
 				DEVELOPMENT_TEAM = 6P3ZM853J8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to use your camera to detect a character";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
