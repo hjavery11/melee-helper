@@ -9,36 +9,42 @@ import SwiftUI
 
 struct MeleeHomeScreenView: View {
     
-    @StateObject private var viewModel = MeleeHomeScreenViewModel()
+    @State private var selection: Tab = .gridview
     
-    let columns: [GridItem] = [GridItem(.flexible()),GridItem(.flexible()),GridItem(.flexible())]
-    
+    enum Tab {
+        case gridview
+        case imageview
+    }
     
     var body: some View {
-        NavigationStack {
-            ZStack{
-                MainBackgroundView()
-                ScrollView {
-                    LazyVGrid(columns: columns) {
-                        ForEach(CharacterData.allCharacters) { character in
-                            NavigationLink(value: character) {
-                                MeleeCharacterTitleView(character: character)
-                            }
-                        }
-                    }
+        TabView(selection: $selection){
+            
+            MeleeCharacterGridView()
+                .tabItem {
+                    Label("Home", systemImage: "square.grid.3x3")
+
                 }
-                .navigationTitle("Characters")
-                
-                .navigationDestination(for: Character.self, destination: { character in
-                    MeleeCharacterDetailView(character: character)
-                })
-                .padding()
-            }
+                .tag(Tab.gridview)
+                .toolbarBackground(Color.red, for: .tabBar)
+            
+            
+            MeleeImageView()
+                .tabItem{
+                    Label("Detect",systemImage: "camera.viewfinder")
+                }
+                .tag(Tab.imageview)
+            
+                .toolbarColorScheme(.dark, for: .tabBar)
+            
         }
-        .tint(Color(.label))
+        .tint(Color.black)
+        
+        
+        
     }
 }
-
 #Preview {
     MeleeHomeScreenView()
 }
+
+
