@@ -21,6 +21,7 @@ struct MeleeCharacterTitleView: View {
                 .fontWeight(.bold)
                 .scaledToFit()
                 .minimumScaleFactor(0.6)
+                .foregroundColor(Color(.label))
         }
         .padding()
     }

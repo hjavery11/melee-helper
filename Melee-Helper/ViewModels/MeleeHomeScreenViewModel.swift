@@ -9,14 +9,6 @@ import Foundation
 
 class MeleeHomeScreenViewModel: ObservableObject {
     
-    
-    var selectedCharacter: Character? {
-        didSet{
-            isShowingDetailView = true
-        }
-    }
-    
-    
-   @Published var isShowingDetailView = false
+
     
 }

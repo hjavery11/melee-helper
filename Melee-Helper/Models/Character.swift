@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Character:Identifiable {
+struct Character:Identifiable, Hashable {
     let id = UUID()
     let name: String
     let imageName: String

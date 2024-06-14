@@ -21,24 +21,21 @@ struct MeleeHomeScreenView: View {
                 ScrollView {
                     LazyVGrid(columns: columns) {
                         ForEach(CharacterData.allCharacters) { character in
-                            MeleeCharacterTitleView(character: character)
-                                .onTapGesture {
-                                    viewModel.selectedCharacter = character
-                                }
+                            NavigationLink(value: character) {
+                                MeleeCharacterTitleView(character: character)
+                            }
                         }
                     }
                 }
                 .navigationTitle("Characters")
-                .font(.title)
+                
+                .navigationDestination(for: Character.self, destination: { character in
+                    MeleeCharacterDetailView(character: character)
+                })
                 .padding()
-                
-                .sheet(isPresented: $viewModel.isShowingDetailView) {
-                    MeleeCharacterDetailView(isShowingDetailView: $viewModel.isShowingDetailView, character:
-                                                viewModel.selectedCharacter!)
-                }
-                
             }
         }
+        .tint(Color(.label))
     }
 }
 
