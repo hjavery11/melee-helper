@@ -14,6 +14,7 @@ struct MeleeCharacterDetailView: View {
     var body: some View {
         ZStack{
             MainBackgroundView()
+                .opacity(0.75)
             VStack(alignment: .center , spacing:20){
                 Spacer()
              
@@ -22,7 +23,7 @@ struct MeleeCharacterDetailView: View {
                     .font(.body)
                     .fontWeight(.medium)
                     .padding()
-                
+                   
                 Spacer()
                 Spacer()
                

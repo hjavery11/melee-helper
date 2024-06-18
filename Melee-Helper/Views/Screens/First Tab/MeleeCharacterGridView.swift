@@ -12,16 +12,15 @@ struct MeleeCharacterGridView: View {
     
     var body: some View {
         NavigationStack {
-            ZStack{
-                MainBackgroundView()
-                ScrollView {
-                    LazyVGrid(columns: viewModel.columns) {
+            ScrollView {
+                    LazyVGrid(columns: viewModel.columns, spacing: 20 ) {
                         ForEach(CharacterData.allCharacters) { character in
                             NavigationLink(value: character) {
                                 MeleeCharacterTitleView(character: character)
                             }
                         }
                     }
+                  
                 }
                 .navigationTitle("Characters")
                 
@@ -29,7 +28,7 @@ struct MeleeCharacterGridView: View {
                     MeleeCharacterDetailView(character: character)
                 })
                 .padding()
-            }
+            
         }
         .tint(Color(.label))
     }

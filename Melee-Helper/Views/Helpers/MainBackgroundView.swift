@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+//stopped using this view because it looked ugly, but going to keep code just in case
 struct MainBackgroundView: View {
     var body: some View {
         LinearGradient(colors: [Color("meleeRed"),Color("meleeOrange"),Color("meleeYellow")], startPoint: .topLeading, endPoint: .bottomTrailing)

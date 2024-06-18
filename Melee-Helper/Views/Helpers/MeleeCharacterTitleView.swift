@@ -15,18 +15,23 @@ struct MeleeCharacterTitleView: View {
         VStack{
             Image(character.imageName)
                 .resizable()
+                .scaledToFit()
                 .frame(width:50, height:50)
             Text(character.name)
                 .font(.title3)
                 .fontWeight(.bold)
                 .scaledToFit()
                 .minimumScaleFactor(0.6)
-                .foregroundColor(Color(.label))
+                .lineLimit(1)
         }
-        .padding()
+   
+       
+     
     }
 }
+
 
 #Preview {
     MeleeCharacterTitleView(character: CharacterData.allCharacters[1])
 }
+

@@ -11,6 +11,13 @@
 		FA2A7AE72C1C09C9008870EC /* MeleeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7AE62C1C09C9008870EC /* MeleeImageView.swift */; };
 		FA2A7AE92C1C1505008870EC /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7AE82C1C1505008870EC /* CameraView.swift */; };
 		FA2A7AEB2C1C154F008870EC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7AEA2C1C154F008870EC /* CameraViewController.swift */; };
+		FA2A7AF02C1D5BE6008870EC /* MeleeHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7AEF2C1D5BE6008870EC /* MeleeHelpView.swift */; };
+		FA2A7B332C20D815008870EC /* CharacterPickerItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B322C20D815008870EC /* CharacterPickerItemView.swift */; };
+		FA2A7B352C20DFE7008870EC /* CharacterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B342C20DFE7008870EC /* CharacterPickerView.swift */; };
+		FA2A7B372C2105C7008870EC /* MeleeHelpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B362C2105C7008870EC /* MeleeHelpViewModel.swift */; };
+		FA2A7B3B2C210785008870EC /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B3A2C210785008870EC /* OpenAIService.swift */; };
+		FA2A7B3E2C2107F7008870EC /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = FA2A7B3D2C2107F7008870EC /* OpenAI */; };
+		FA2A7B402C2152B2008870EC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B3F2C2152B2008870EC /* LoadingView.swift */; };
 		FABABC372C1B64DB00654DE6 /* Melee_HelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */; };
 		FABABC392C1B64DB00654DE6 /* MeleeHomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC382C1B64DB00654DE6 /* MeleeHomeScreenView.swift */; };
 		FABABC3B2C1B64DD00654DE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FABABC3A2C1B64DD00654DE6 /* Assets.xcassets */; };
@@ -28,6 +35,12 @@
 		FA2A7AE62C1C09C9008870EC /* MeleeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeImageView.swift; sourceTree = "<group>"; };
 		FA2A7AE82C1C1505008870EC /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		FA2A7AEA2C1C154F008870EC /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		FA2A7AEF2C1D5BE6008870EC /* MeleeHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeHelpView.swift; sourceTree = "<group>"; };
+		FA2A7B322C20D815008870EC /* CharacterPickerItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPickerItemView.swift; sourceTree = "<group>"; };
+		FA2A7B342C20DFE7008870EC /* CharacterPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPickerView.swift; sourceTree = "<group>"; };
+		FA2A7B362C2105C7008870EC /* MeleeHelpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeHelpViewModel.swift; sourceTree = "<group>"; };
+		FA2A7B3A2C210785008870EC /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		FA2A7B3F2C2152B2008870EC /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		FABABC332C1B64DB00654DE6 /* Melee-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Melee-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Melee_HelperApp.swift; sourceTree = "<group>"; };
 		FABABC382C1B64DB00654DE6 /* MeleeHomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeHomeScreenView.swift; sourceTree = "<group>"; };
@@ -46,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2A7B3E2C2107F7008870EC /* OpenAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +69,7 @@
 		FA2A7AE32C1C0883008870EC /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FA2A7AEE2C1D5BDE008870EC /* Third Tab */,
 				FA2A7AE52C1C0899008870EC /* Second Screen */,
 				FA2A7AE42C1C0890008870EC /* First Tab */,
 			);
@@ -64,8 +79,8 @@
 		FA2A7AE42C1C0890008870EC /* First Tab */ = {
 			isa = PBXGroup;
 			children = (
-				FABABC532C1B777500654DE6 /* MeleeCharacterGridViewModel.swift */,
 				FA2A7AE12C1C06EC008870EC /* MeleeCharacterGridView.swift */,
+				FABABC532C1B777500654DE6 /* MeleeCharacterGridViewModel.swift */,
 			);
 			path = "First Tab";
 			sourceTree = "<group>";
@@ -78,6 +93,33 @@
 				FA2A7AEA2C1C154F008870EC /* CameraViewController.swift */,
 			);
 			path = "Second Screen";
+			sourceTree = "<group>";
+		};
+		FA2A7AEE2C1D5BDE008870EC /* Third Tab */ = {
+			isa = PBXGroup;
+			children = (
+				FA2A7B382C2105E6008870EC /* Picker */,
+				FA2A7AEF2C1D5BE6008870EC /* MeleeHelpView.swift */,
+				FA2A7B362C2105C7008870EC /* MeleeHelpViewModel.swift */,
+			);
+			path = "Third Tab";
+			sourceTree = "<group>";
+		};
+		FA2A7B382C2105E6008870EC /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				FA2A7B322C20D815008870EC /* CharacterPickerItemView.swift */,
+				FA2A7B342C20DFE7008870EC /* CharacterPickerView.swift */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		FA2A7B392C210776008870EC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FA2A7B3A2C210785008870EC /* OpenAIService.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		FABABC2A2C1B64DB00654DE6 = {
@@ -99,6 +141,7 @@
 		FABABC352C1B64DB00654DE6 /* Melee-Helper */ = {
 			isa = PBXGroup;
 			children = (
+				FA2A7B392C210776008870EC /* Utilities */,
 				FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */,
 				FABABC4E2C1B748600654DE6 /* Views */,
 				FABABC472C1B6AB200654DE6 /* Data */,
@@ -149,6 +192,7 @@
 				FABABC4C2C1B739800654DE6 /* MeleeCharacterDetailView.swift */,
 				FABABC4A2C1B6EBD00654DE6 /* MeleeCharacterTitleView.swift */,
 				FABABC502C1B74A600654DE6 /* MainBackgroundView.swift */,
+				FA2A7B3F2C2152B2008870EC /* LoadingView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -169,6 +213,9 @@
 			dependencies = (
 			);
 			name = "Melee-Helper";
+			packageProductDependencies = (
+				FA2A7B3D2C2107F7008870EC /* OpenAI */,
+			);
 			productName = "Melee-Helper";
 			productReference = FABABC332C1B64DB00654DE6 /* Melee-Helper.app */;
 			productType = "com.apple.product-type.application";
@@ -197,6 +244,9 @@
 				Base,
 			);
 			mainGroup = FABABC2A2C1B64DB00654DE6;
+			packageReferences = (
+				FA2A7B3C2C2107F7008870EC /* XCRemoteSwiftPackageReference "OpenAI" */,
+			);
 			productRefGroup = FABABC342C1B64DB00654DE6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -223,18 +273,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2A7B372C2105C7008870EC /* MeleeHelpViewModel.swift in Sources */,
+				FA2A7B3B2C210785008870EC /* OpenAIService.swift in Sources */,
 				FA2A7AE22C1C06EC008870EC /* MeleeCharacterGridView.swift in Sources */,
 				FABABC392C1B64DB00654DE6 /* MeleeHomeScreenView.swift in Sources */,
 				FABABC492C1B6AB800654DE6 /* CharacterData.swift in Sources */,
 				FABABC452C1B65CD00654DE6 /* Character.swift in Sources */,
 				FABABC4B2C1B6EBD00654DE6 /* MeleeCharacterTitleView.swift in Sources */,
+				FA2A7B332C20D815008870EC /* CharacterPickerItemView.swift in Sources */,
 				FA2A7AEB2C1C154F008870EC /* CameraViewController.swift in Sources */,
+				FA2A7B352C20DFE7008870EC /* CharacterPickerView.swift in Sources */,
 				FABABC4D2C1B739800654DE6 /* MeleeCharacterDetailView.swift in Sources */,
 				FABABC372C1B64DB00654DE6 /* Melee_HelperApp.swift in Sources */,
 				FA2A7AE92C1C1505008870EC /* CameraView.swift in Sources */,
+				FA2A7AF02C1D5BE6008870EC /* MeleeHelpView.swift in Sources */,
 				FA2A7AE72C1C09C9008870EC /* MeleeImageView.swift in Sources */,
 				FABABC542C1B777500654DE6 /* MeleeCharacterGridViewModel.swift in Sources */,
 				FABABC512C1B74A600654DE6 /* MainBackgroundView.swift in Sources */,
+				FA2A7B402C2152B2008870EC /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +498,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA2A7B3C2C2107F7008870EC /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MacPaw/OpenAI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA2A7B3D2C2107F7008870EC /* OpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA2A7B3C2C2107F7008870EC /* XCRemoteSwiftPackageReference "OpenAI" */;
+			productName = OpenAI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FABABC2B2C1B64DB00654DE6 /* Project object */;
 }

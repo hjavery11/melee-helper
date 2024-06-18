@@ -21,11 +21,10 @@ struct MeleeHomeScreenView: View {
             
             MeleeCharacterGridView()
                 .tabItem {
-                    Label("Home", systemImage: "square.grid.3x3")
+                    Label("Info", systemImage: "square.grid.3x3")
 
                 }
                 .tag(Tab.gridview)
-                .toolbarBackground(Color.red, for: .tabBar)
             
             
             MeleeImageView()
@@ -34,7 +33,10 @@ struct MeleeHomeScreenView: View {
                 }
                 .tag(Tab.imageview)
             
-                .toolbarColorScheme(.dark, for: .tabBar)
+            MeleeHelpView()
+                .tabItem{
+                    Label("Help", systemImage: "questionmark.diamond")
+                }
             
         }
         .tint(Color(.label))

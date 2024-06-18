@@ -8,6 +8,7 @@
 import Foundation
 
 struct CharacterData {
+    
     static let allCharacters: [Character] = [
         Character(name: "Donkey Kong", imageName: "DonkeyKongHeadSSBM", description: "A powerful and heavy character known for his brute strength and signature moves like the Giant Punch and Spinning Kong."),
         Character(name: "Link", imageName: "LinkHeadSSBM", description: "The hero of Hyrule, equipped with a versatile arsenal including bombs, a boomerang, and his trusty Master Sword."),
