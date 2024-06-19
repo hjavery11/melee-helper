@@ -1,0 +1,55 @@
+# Xcode specific files
+*.xcuserdatad
+*.xcuserdata
+*.xcworkspace
+*.xcodeproj/project.xcworkspace
+*.xcodeproj/xcuserdata
+*.xcodeproj/xcshareddata/xcschemes/*
+
+# Build products
+build/
+DerivedData/
+
+# Dependency managers
+Pods/
+Carthage/
+
+# User-specific files
+*.moved-aside
+*.swp
+*.lock
+.DS_Store
+
+# Secrets and configuration files
+Config.xcconfig
+Melee-Helper.xcodeproj/xcshareddata/xcschemes/Melee-Helper.xcscheme
+
+# Swift Package Manager
+/.build
+/Packages
+.swiftpm/xcode/package.pins
+/.swiftpm
+.build/
+
+# CocoaPods
+Pods/
+Podfile.lock
+# Optional CocoaPods
+# Uncomment if you have a workspace
+#*.xcworkspace
+
+# Carthage
+Carthage/Build/
+
+# Accio dependency manager
+Dependencies/
+.accio/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output/**/*.log
+
+# Code Injection
+.idea/
