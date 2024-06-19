@@ -79,14 +79,9 @@ struct MeleeHelpView: View {
                 Button {
                     viewModel.response = ""
                     Task{
-                        viewModel.isLoading = true
-                        do {
-                            try await viewModel.getResponse(userCharacter: viewModel.userCharacter.name, enemyCharacter: viewModel.enemyCharacter.name, helpType: helpType.rawValue)
-                        } catch {
-                            viewModel.response = "Error: \(error.localizedDescription)"
-                        }
-                        viewModel.isLoading = false
+                        viewModel.getResponse(userCharacter: viewModel.userCharacter.name, enemyCharacter: viewModel.enemyCharacter.name, helpType: helpType.rawValue)
                     }
+                    
                 } label: {
                     Text("Get Advice")
                         .frame(width: 150, height: 50)
@@ -115,8 +110,8 @@ struct MeleeHelpView: View {
                             
                             if(viewModel.isLoading) {
                                 VStack{
-                                    Spacer()
                                     LoadingView()
+                                        .offset(y:100)
                                 }
                               
                             }

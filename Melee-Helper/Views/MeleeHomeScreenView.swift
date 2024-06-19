@@ -9,15 +9,23 @@ import SwiftUI
 
 struct MeleeHomeScreenView: View {
     
-    @State private var selection: Tab = .gridview
+    @State private var selection: Tab = .homeview
     
     enum Tab {
         case gridview
         case imageview
+        case homeview
     }
     
     var body: some View {
         TabView(selection: $selection){
+            
+          
+            MeleeHelpView()
+                .tabItem{
+                    Label("Home", systemImage: "house")
+                }
+                .tag(Tab.homeview)
             
             MeleeCharacterGridView()
                 .tabItem {
@@ -27,16 +35,13 @@ struct MeleeHomeScreenView: View {
                 .tag(Tab.gridview)
             
             
-            MeleeImageView()
-                .tabItem{
-                    Label("Detect",systemImage: "camera.viewfinder")
-                }
-                .tag(Tab.imageview)
+//            MeleeImageView()
+//                .tabItem{
+//                    Label("Detect",systemImage: "camera.viewfinder")
+//                }
+//                .tag(Tab.imageview)
             
-            MeleeHelpView()
-                .tabItem{
-                    Label("Help", systemImage: "questionmark.diamond")
-                }
+          
             
         }
         .tint(Color(.label))

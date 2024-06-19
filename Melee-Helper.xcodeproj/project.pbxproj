@@ -18,6 +18,8 @@
 		FA2A7B3B2C210785008870EC /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B3A2C210785008870EC /* OpenAIService.swift */; };
 		FA2A7B3E2C2107F7008870EC /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = FA2A7B3D2C2107F7008870EC /* OpenAI */; };
 		FA2A7B402C2152B2008870EC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B3F2C2152B2008870EC /* LoadingView.swift */; };
+		FA2A7B542C22670C008870EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7B532C22670C008870EC /* GoogleService-Info.plist */; };
+		FA2A7B572C22676F008870EC /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = FA2A7B562C22676F008870EC /* FirebaseCrashlytics */; };
 		FABABC372C1B64DB00654DE6 /* Melee_HelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */; };
 		FABABC392C1B64DB00654DE6 /* MeleeHomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC382C1B64DB00654DE6 /* MeleeHomeScreenView.swift */; };
 		FABABC3B2C1B64DD00654DE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FABABC3A2C1B64DD00654DE6 /* Assets.xcassets */; };
@@ -41,6 +43,7 @@
 		FA2A7B362C2105C7008870EC /* MeleeHelpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeHelpViewModel.swift; sourceTree = "<group>"; };
 		FA2A7B3A2C210785008870EC /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
 		FA2A7B3F2C2152B2008870EC /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		FA2A7B532C22670C008870EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FABABC332C1B64DB00654DE6 /* Melee-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Melee-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Melee_HelperApp.swift; sourceTree = "<group>"; };
 		FABABC382C1B64DB00654DE6 /* MeleeHomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeHomeScreenView.swift; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2A7B3E2C2107F7008870EC /* OpenAI in Frameworks */,
+				FA2A7B572C22676F008870EC /* FirebaseCrashlytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +129,7 @@
 		FABABC2A2C1B64DB00654DE6 = {
 			isa = PBXGroup;
 			children = (
+				FA2A7B532C22670C008870EC /* GoogleService-Info.plist */,
 				FABABC352C1B64DB00654DE6 /* Melee-Helper */,
 				FABABC342C1B64DB00654DE6 /* Products */,
 			);
@@ -215,6 +220,7 @@
 			name = "Melee-Helper";
 			packageProductDependencies = (
 				FA2A7B3D2C2107F7008870EC /* OpenAI */,
+				FA2A7B562C22676F008870EC /* FirebaseCrashlytics */,
 			);
 			productName = "Melee-Helper";
 			productReference = FABABC332C1B64DB00654DE6 /* Melee-Helper.app */;
@@ -246,6 +252,7 @@
 			mainGroup = FABABC2A2C1B64DB00654DE6;
 			packageReferences = (
 				FA2A7B3C2C2107F7008870EC /* XCRemoteSwiftPackageReference "OpenAI" */,
+				FA2A7B552C22676F008870EC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = FABABC342C1B64DB00654DE6 /* Products */;
 			projectDirPath = "";
@@ -263,6 +270,7 @@
 			files = (
 				FABABC3E2C1B64DD00654DE6 /* Preview Assets.xcassets in Resources */,
 				FABABC3B2C1B64DD00654DE6 /* Assets.xcassets in Resources */,
+				FA2A7B542C22670C008870EC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +516,14 @@
 				minimumVersion = 0.2.9;
 			};
 		};
+		FA2A7B552C22676F008870EC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.28.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -515,6 +531,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA2A7B3C2C2107F7008870EC /* XCRemoteSwiftPackageReference "OpenAI" */;
 			productName = OpenAI;
+		};
+		FA2A7B562C22676F008870EC /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA2A7B552C22676F008870EC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -25,31 +25,58 @@ class OpenAIService: ObservableObject {
     }
 
     // Function to fetch a completion from OpenAI using async/await
-    func fetchChatCompletion(systemPrompt: String, userPrompt: String, completed: @escaping (Result<String,Error>)-> Void) async {
+//    func fetchChatCompletion(systemPrompt: String, userPrompt: String, completed: @escaping (Result<String,Error>)-> Void) async {
+//        let userMessage = ChatQuery.ChatCompletionMessageParam.user(.init(content: .string(userPrompt)))
+//        let systemMessage = ChatQuery.ChatCompletionMessageParam.system(.init(content: systemPrompt))
+//           let query = ChatQuery(
+//               messages: [systemMessage,userMessage],
+//               model: .gpt4_o,
+//               frequencyPenalty: 1,  // Penalize repetition
+//               maxTokens: 1000,
+//               presencePenalty: 1,  // Encourage new topics
+//               temperature: 1,  // Increase creativity
+//               topP: 0.8  // Consider more diverse options
+//           )
+//           
+//           do {
+//               let result = try await openAI.chats(query: query)
+//               if let completion = result.choices.first?.message.content?.string {
+//                   DispatchQueue.main.async {
+//                       completed(.success(completion))
+//                   }
+//               }
+//           } catch {
+//               DispatchQueue.main.async {
+//                   completed(.failure(error))
+//               }
+//           }
+//       }
+    
+    
+    func fetchChatCompletion(systemPrompt: String, userPrompt: String) async throws -> String {
         let userMessage = ChatQuery.ChatCompletionMessageParam.user(.init(content: .string(userPrompt)))
         let systemMessage = ChatQuery.ChatCompletionMessageParam.system(.init(content: systemPrompt))
-           let query = ChatQuery(
-               messages: [systemMessage,userMessage],
-               model: .gpt4_o,
-               frequencyPenalty: 1,  // Penalize repetition
-               maxTokens: 1000,
-               presencePenalty: 1,  // Encourage new topics
-               temperature: 1,  // Increase creativity
-               topP: 0.8  // Consider more diverse options
-           )
-           
-           do {
-               let result = try await openAI.chats(query: query)
-               if let completion = result.choices.first?.message.content?.string {
-                   DispatchQueue.main.async {
-                       completed(.success(completion))
-                   }
-               }
-           } catch {
-               DispatchQueue.main.async {
-                   completed(.failure(error))
-               }
-           }
-       }
+        let query = ChatQuery(
+            messages: [systemMessage,userMessage],
+            model: .gpt4_o,
+            frequencyPenalty: 1,  // Penalize repetition
+            maxTokens: 1000,
+            presencePenalty: 1,  // Encourage new topics
+            temperature: 1,  // Increase creativity
+            topP: 0.8  // Consider more diverse options
+        )
+        
+        do {
+            let result = try await openAI.chats(query: query)
+            guard let finalString = result.choices.first?.message.content?.string else {
+                throw NSError(domain: "OpenAIErrorDomain", code: 0, userInfo: [NSLocalizedDescriptionKey: "No content found in response"])
+            }
+            return finalString
+            
+        } catch {
+            throw error
+        }
+        
+    }
 }
 
