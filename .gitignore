@@ -21,7 +21,7 @@ Carthage/
 .DS_Store
 
 # Secrets and configuration files
-Config.xcconfig
+Melee-Helper/Config.xcconfig
 Melee-Helper.xcodeproj/xcshareddata/xcschemes/Melee-Helper.xcscheme
 
 # Swift Package Manager
