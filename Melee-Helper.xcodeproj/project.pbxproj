@@ -44,6 +44,8 @@
 		FA2A7B3A2C210785008870EC /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
 		FA2A7B3F2C2152B2008870EC /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		FA2A7B532C22670C008870EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA2A7B642C227D84008870EC /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		FA2A7B652C227E14008870EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FABABC332C1B64DB00654DE6 /* Melee-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Melee-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Melee_HelperApp.swift; sourceTree = "<group>"; };
 		FABABC382C1B64DB00654DE6 /* MeleeHomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeHomeScreenView.swift; sourceTree = "<group>"; };
@@ -145,6 +147,8 @@
 		FABABC352C1B64DB00654DE6 /* Melee-Helper */ = {
 			isa = PBXGroup;
 			children = (
+				FA2A7B652C227E14008870EC /* Info.plist */,
+				FA2A7B642C227D84008870EC /* Config.xcconfig */,
 				FA2A7B532C22670C008870EC /* GoogleService-Info.plist */,
 				FA2A7B392C210776008870EC /* Utilities */,
 				FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */,
@@ -334,6 +338,7 @@
 /* Begin XCBuildConfiguration section */
 		FABABC3F2C1B64DD00654DE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA2A7B642C227D84008870EC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -397,6 +402,7 @@
 		};
 		FABABC402C1B64DD00654DE6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA2A7B642C227D84008870EC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -463,6 +469,7 @@
 				DEVELOPMENT_TEAM = 6P3ZM853J8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Melee-Helper/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need to use your camera to detect a character";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -494,6 +501,7 @@
 				DEVELOPMENT_TEAM = 6P3ZM853J8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Melee-Helper/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need to use your camera to detect a character";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
