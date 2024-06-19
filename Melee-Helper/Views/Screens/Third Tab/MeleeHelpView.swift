@@ -74,7 +74,10 @@ struct MeleeHelpView: View {
                 }
                 .pickerStyle(.segmented)                  
                 
-                
+                //For debugging firebase
+                Button("Crash") {
+                  fatalError("Crash was triggered")
+                }
                 
                 Button {
                     viewModel.response = ""
