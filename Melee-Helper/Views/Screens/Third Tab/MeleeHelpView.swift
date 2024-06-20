@@ -15,8 +15,6 @@ struct MeleeHelpView: View {
 
   
     @StateObject private var viewModel = MeleeHelpViewModel()
-    
-    @State private var helpType: HelpType = .neutral
     @State private var showAnswer = false
     
    
@@ -60,7 +58,7 @@ struct MeleeHelpView: View {
                 
                 
                 
-                Picker("Help", selection: $helpType){
+                Picker("Help", selection: $viewModel.helpType){
                     ForEach(HelpType.allCases) { helpType in
                         Text(helpType.rawValue.capitalized)
                         
@@ -73,7 +71,7 @@ struct MeleeHelpView: View {
                 Button {
                     viewModel.response = ""
                     Task{
-                        viewModel.getResponse(userCharacter: viewModel.userCharacter.name, enemyCharacter: viewModel.enemyCharacter.name, helpType: helpType.rawValue)
+                        viewModel.getResponse()
                         showAnswer = true
                     }
                     

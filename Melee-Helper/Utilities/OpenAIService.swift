@@ -11,9 +11,6 @@ import Combine
 
 class OpenAIService: ObservableObject {
     private var openAI: OpenAI?
-    
-    private var messageHistory: [ChatQuery.ChatCompletionMessageParam] = []
-    
 
     init() {
         do {
@@ -42,26 +39,13 @@ class OpenAIService: ObservableObject {
         self.openAI = OpenAI(configuration: configuration)
     }
     
-    func fetchChatCompletion(systemPrompt: String?, userPrompt: String, newChat: Bool) async throws -> String {
+    func fetchChatCompletion(messages: [ChatQuery.ChatCompletionMessageParam], newChat: Bool) async throws -> String {
         guard let openAI = openAI else {
             throw NSError(domain: "OpenAIErrorDomain", code: 1, userInfo: [NSLocalizedDescriptionKey: "OpenAI client not initialized"])
         }
 
-        let userMessage = ChatQuery.ChatCompletionMessageParam.user(.init(content: .string(userPrompt)))
-        let systemMessage = ChatQuery.ChatCompletionMessageParam.system(.init(content: systemPrompt ?? ""))
-      
-  
-        if (newChat){
-            messageHistory.append(contentsOf:[systemMessage,userMessage])
-        } else {
-            messageHistory.append(userMessage)
-        }
-        
-    
-     
-        
         let query = ChatQuery(
-            messages: messageHistory,
+            messages: messages,
             model: .gpt4_o,
             frequencyPenalty: 1,  // Penalize repetition
             maxTokens: 1000,

@@ -52,7 +52,10 @@ struct HelpResponseView: View {
                         .padding(.leading, 10)
                         .submitLabel(.search)
                     Button{
-                       // viewModel.getResponse(userCharacter: <#T##String#>, enemyCharacter: <#T##String#>, helpType: <#T##String#>)
+                        if !userQuestion.isEmpty {
+                                                    viewModel.getFollowUpResponse(followUpQuestion: userQuestion)
+                                                    userQuestion = ""
+                                                }
                     } label: {
                         Image(systemName: "magnifyingglass")
                             .tint(Color(.label))
