@@ -30,7 +30,7 @@ import SwiftUI
         
         Task {
             do {
-                self.response = try await openAI.fetchChatCompletion(systemPrompt: systemPrompt , userPrompt: userPrompt)
+                self.response = try await openAI.fetchChatCompletion(systemPrompt: systemPrompt , userPrompt: userPrompt, newChat: true)
             } catch {
                 self.response = error.localizedDescription
             }
