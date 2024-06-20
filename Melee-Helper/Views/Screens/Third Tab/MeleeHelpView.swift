@@ -7,24 +7,19 @@
 
 import SwiftUI
 
-enum Help: String, CaseIterable, Identifiable {
-    case neutral, punish, defense
-    var id: Self { self }
-}
 
 
 
-struct MeleeHelpView: View {
-    
-    @Environment(\.colorScheme) var colorScheme
-    
+
+struct MeleeHelpView: View {    
+
+  
     @StateObject private var viewModel = MeleeHelpViewModel()
     
-    @State private var helpType: Help = .neutral
+    @State private var helpType: HelpType = .neutral
+    @State private var showAnswer = false
     
-    private var shadowColor: Color {
-            colorScheme == .dark ? Color.white.opacity(0.2) : Color.black.opacity(0.2)
-        }
+   
   
     
     var body: some View {
@@ -65,24 +60,21 @@ struct MeleeHelpView: View {
                 
                 
                 
-                
                 Picker("Help", selection: $helpType){
-                    ForEach(Help.allCases) { helpType in
+                    ForEach(HelpType.allCases) { helpType in
                         Text(helpType.rawValue.capitalized)
                         
                     }
                 }
-                .pickerStyle(.segmented)                  
+                .pickerStyle(.segmented)
                 
-                //For debugging firebase
-//                Button("Crash") {
-//                  fatalError("Crash was triggered")
-//                }
+              
                 
                 Button {
                     viewModel.response = ""
                     Task{
                         viewModel.getResponse(userCharacter: viewModel.userCharacter.name, enemyCharacter: viewModel.enemyCharacter.name, helpType: helpType.rawValue)
+                        showAnswer = true
                     }
                     
                 } label: {
@@ -94,35 +86,9 @@ struct MeleeHelpView: View {
                         .clipShape(.rect(cornerRadius: 10))
                     
                 }
-                .disabled(viewModel.isLoading)
-                .opacity(viewModel.isLoading ? 0.5:1)
-                
-                ZStack{
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(Color(.systemBackground))
-                        .shadow(color: shadowColor, radius: 5, x: 0, y: 5)
-                    
-                    
-                    ScrollView{
-                        VStack{
-                            if (viewModel.response != "") {
-                                Text(viewModel.response)
-                                    .padding()
-                              
-                            }
-                            
-                            if(viewModel.isLoading) {
-                                VStack{
-                                    LoadingView()
-                                        .offset(y:100)
-                                }
-                              
-                            }
-                        }
-                    
-                    }
+                .fullScreenCover(isPresented: $showAnswer, onDismiss: didDismiss){
+                    HelpResponseView(viewModel: viewModel)
                 }
-                .padding([.bottom],10)
                 
             }
             .padding()
@@ -134,6 +100,9 @@ struct MeleeHelpView: View {
         .padding()
     }
     
+    func didDismiss() {
+        viewModel.cancelResponseTask()
+    }
     
     
 }

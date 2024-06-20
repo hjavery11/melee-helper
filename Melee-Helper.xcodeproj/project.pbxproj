@@ -20,6 +20,8 @@
 		FA2A7B402C2152B2008870EC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B3F2C2152B2008870EC /* LoadingView.swift */; };
 		FA2A7B542C22670C008870EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7B532C22670C008870EC /* GoogleService-Info.plist */; };
 		FA2A7B572C22676F008870EC /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = FA2A7B562C22676F008870EC /* FirebaseCrashlytics */; };
+		FA2A7B672C23F540008870EC /* HelpResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B662C23F540008870EC /* HelpResponseView.swift */; };
+		FA2A7B6B2C248C2A008870EC /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B6A2C248C2A008870EC /* XDismissButton.swift */; };
 		FABABC372C1B64DB00654DE6 /* Melee_HelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */; };
 		FABABC392C1B64DB00654DE6 /* MeleeHomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC382C1B64DB00654DE6 /* MeleeHomeScreenView.swift */; };
 		FABABC3B2C1B64DD00654DE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FABABC3A2C1B64DD00654DE6 /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 		FA2A7B532C22670C008870EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA2A7B642C227D84008870EC /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		FA2A7B652C227E14008870EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FA2A7B662C23F540008870EC /* HelpResponseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpResponseView.swift; sourceTree = "<group>"; };
+		FA2A7B6A2C248C2A008870EC /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
 		FABABC332C1B64DB00654DE6 /* Melee-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Melee-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Melee_HelperApp.swift; sourceTree = "<group>"; };
 		FABABC382C1B64DB00654DE6 /* MeleeHomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeHomeScreenView.swift; sourceTree = "<group>"; };
@@ -105,8 +109,9 @@
 			isa = PBXGroup;
 			children = (
 				FA2A7B382C2105E6008870EC /* Picker */,
-				FA2A7AEF2C1D5BE6008870EC /* MeleeHelpView.swift */,
 				FA2A7B362C2105C7008870EC /* MeleeHelpViewModel.swift */,
+				FA2A7AEF2C1D5BE6008870EC /* MeleeHelpView.swift */,
+				FA2A7B662C23F540008870EC /* HelpResponseView.swift */,
 			);
 			path = "Third Tab";
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 				FABABC4A2C1B6EBD00654DE6 /* MeleeCharacterTitleView.swift */,
 				FABABC502C1B74A600654DE6 /* MainBackgroundView.swift */,
 				FA2A7B3F2C2152B2008870EC /* LoadingView.swift */,
+				FA2A7B6A2C248C2A008870EC /* XDismissButton.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2A7B372C2105C7008870EC /* MeleeHelpViewModel.swift in Sources */,
+				FA2A7B672C23F540008870EC /* HelpResponseView.swift in Sources */,
 				FA2A7B3B2C210785008870EC /* OpenAIService.swift in Sources */,
 				FA2A7AE22C1C06EC008870EC /* MeleeCharacterGridView.swift in Sources */,
 				FABABC392C1B64DB00654DE6 /* MeleeHomeScreenView.swift in Sources */,
@@ -330,6 +337,7 @@
 				FABABC542C1B777500654DE6 /* MeleeCharacterGridViewModel.swift in Sources */,
 				FABABC512C1B74A600654DE6 /* MainBackgroundView.swift in Sources */,
 				FA2A7B402C2152B2008870EC /* LoadingView.swift in Sources */,
+				FA2A7B6B2C248C2A008870EC /* XDismissButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

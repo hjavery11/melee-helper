@@ -76,6 +76,7 @@ class OpenAIService: ObservableObject {
             guard let finalString = result.choices.first?.message.content?.string else {
                 throw NSError(domain: "OpenAIErrorDomain", code: 0, userInfo: [NSLocalizedDescriptionKey: "No content found in response"])
             }
+            print("completed chat gpt call and got response")
             return finalString
         } catch {
             throw error
