@@ -51,19 +51,21 @@ struct HelpResponseView: View {
                     TextField("Enter a follow-up question", text: $userQuestion)
                         .padding(.leading, 10)
                         .submitLabel(.search)
+                        .disabled(viewModel.isLoading)
                     Button{
                         if !userQuestion.isEmpty {
-                                                    viewModel.getFollowUpResponse(followUpQuestion: userQuestion)
-                                                    userQuestion = ""
-                                                }
+                            viewModel.response = ""
+                            viewModel.getFollowUpResponse(followUpQuestion: userQuestion)
+                            userQuestion = ""
+                        }
                     } label: {
                         Image(systemName: "magnifyingglass")
                             .tint(Color(.label))
                     }
                     .keyboardShortcut(.defaultAction)
                     
-                     
-                      
+                    
+                    
                 }
                 .padding(10)
                 .frame(width: 300, alignment: .center)
