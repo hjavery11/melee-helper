@@ -26,8 +26,8 @@ enum HelpType: String, CaseIterable, Identifiable {
     @Published var response:String = ""
     @Published var currentTaskID: UUID?
     
-    @Published var userCharacter: Character = CharacterData.allCharacters[0]
-    @Published var enemyCharacter: Character = CharacterData.allCharacters[1]
+    @Published var userCharacter: Character = CharacterData.allCharacters[5]
+    @Published var enemyCharacter: Character = CharacterData.allCharacters[10]
     @Published var helpType: HelpType = .neutral
     
     private var currentQuery: MeleeQuery?

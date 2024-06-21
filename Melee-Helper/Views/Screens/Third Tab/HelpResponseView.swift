@@ -13,6 +13,8 @@ struct HelpResponseView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.colorScheme) var colorScheme
     @State private var userQuestion = ""
+    @State private var expandTextField = false
+    @FocusState private var isFocused
     
     private var shadowColor: Color {
         colorScheme == .dark ? Color.white.opacity(0.2) : Color.black.opacity(0.2)
@@ -34,6 +36,7 @@ struct HelpResponseView: View {
                         .padding()
                 }
             }
+            .scrollDismissesKeyboard(.immediately)
             
         }
         .padding(.top,70)
@@ -47,34 +50,70 @@ struct HelpResponseView: View {
                 }
                 Spacer()
                 
-                HStack{
-                    TextField("Enter a follow-up question", text: $userQuestion)
-                        .padding(.leading, 10)
-                        .submitLabel(.search)
-                        .disabled(viewModel.isLoading)
+                
+                if(!expandTextField && !viewModel.isLoading){
                     Button{
-                        if !userQuestion.isEmpty {
-                            viewModel.response = ""
-                            viewModel.getFollowUpResponse(followUpQuestion: userQuestion)
-                            userQuestion = ""
+                        withAnimation{
+                            expandTextField.toggle()
+                            isFocused = true
                         }
+                       
                     } label: {
                         Image(systemName: "magnifyingglass")
                             .tint(Color(.label))
+                            .imageScale(.large)
+                            .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+                            .padding(10)
                     }
-                    .keyboardShortcut(.defaultAction)
-                    
-                    
-                    
                 }
-                .padding(10)
-                .frame(width: 300, alignment: .center)
-                .cornerRadius(16)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 16)
-                        .inset(by: 0.5)
-                        .stroke(Color(.meleeOrange), lineWidth: 1)
-                )
+                if(expandTextField){
+                    HStack{
+                        TextField("Enter a follow-up question", text: $userQuestion, onEditingChanged: {(editingChanged) in
+                            if editingChanged {
+                                //focused
+                               
+                            } else {
+                                //focus lost
+                                withAnimation{
+                                    expandTextField = false
+                                }
+                            }
+                        })
+                            .padding(.leading, 10)
+                            .submitLabel(.search)
+                            .disabled(viewModel.isLoading)
+                            .focused($isFocused)
+                        Button{
+                            if !userQuestion.isEmpty {
+                                viewModel.response = ""
+                                viewModel.getFollowUpResponse(followUpQuestion: userQuestion)
+                                userQuestion = ""
+                            } else {
+                                withAnimation{
+                                    expandTextField.toggle()
+                                    isFocused = false
+                                }
+                            }
+                        } label: {
+                            Image(systemName: "magnifyingglass")
+                                .tint(Color(.label))
+                                .imageScale(.large)
+                                .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+                        }
+                        .keyboardShortcut(.defaultAction)
+                        
+                    }
+                    .padding(10)
+                    .frame(width: 300, alignment: .center)
+                    .cornerRadius(16)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .inset(by: 0.5)
+                            .stroke(Color(.meleeOrange), lineWidth: 1)
+                    )
+                    .transition(.move(edge: .trailing))
+                }
+               
             }
         }
         
