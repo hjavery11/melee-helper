@@ -72,6 +72,7 @@ enum HelpType: String, CaseIterable, Identifiable {
     }
     
     func getFollowUpResponse(followUpQuestion: String) {
+        self.response = ""
         guard var query = currentQuery else { return }
         let taskID = UUID()
         currentTaskID = taskID
@@ -98,7 +99,7 @@ enum HelpType: String, CaseIterable, Identifiable {
             if taskID == currentTaskID {
                 isLoading = false
             }
-        }
+        }       
     }
     
     func cancelResponseTask() {
