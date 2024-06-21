@@ -33,7 +33,7 @@ struct HelpResponseView: View {
                         LoadingView()
                             .offset(y:250)
                     } else{
-                        //  Text(viewModel.response)
+                      //  Text(viewModel.response)
                         Markdown(viewModel.response)
                     }
                   

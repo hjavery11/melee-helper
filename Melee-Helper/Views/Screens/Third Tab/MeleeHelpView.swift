@@ -61,10 +61,25 @@ struct MeleeHelpView: View {
                 Picker("Help", selection: $viewModel.helpType){
                     ForEach(HelpType.allCases) { helpType in
                         Text(helpType.rawValue.capitalized)
-                        
                     }
                 }
                 .pickerStyle(.segmented)
+               
+                
+                HStack{
+                    Text("Skill Level:")
+                        .font(.title2)
+                    Spacer()
+                    Picker("Skill Level", selection: $viewModel.skillType){
+                        ForEach(SkillType.allCases) { helpType in
+                            Text(helpType.rawValue.capitalized)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                    .tint(Color(.label))
+                    Spacer()
+                }
+               
                 
               
                 
@@ -97,6 +112,8 @@ struct MeleeHelpView: View {
         }
         .padding()
     }
+        
+       
     
     func didDismiss() {
         viewModel.cancelResponseTask()

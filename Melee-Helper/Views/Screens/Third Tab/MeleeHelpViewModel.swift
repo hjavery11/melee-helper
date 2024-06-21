@@ -15,6 +15,12 @@ enum HelpType: String, CaseIterable, Identifiable {
     var id: Self { self }
 }
 
+enum SkillType: String, CaseIterable, Identifiable {
+    case beginner, intermediate, advanced
+    var id: Self { self }
+}
+
+
 @MainActor class MeleeHelpViewModel: ObservableObject {
     
     
@@ -29,6 +35,7 @@ enum HelpType: String, CaseIterable, Identifiable {
     @Published var userCharacter: Character = CharacterData.allCharacters[5]
     @Published var enemyCharacter: Character = CharacterData.allCharacters[10]
     @Published var helpType: HelpType = .neutral
+    @Published var skillType: SkillType = .intermediate
     
     private var currentQuery: MeleeQuery?
     
@@ -46,7 +53,7 @@ enum HelpType: String, CaseIterable, Identifiable {
         let taskID = UUID()
         currentTaskID = taskID
         
-        let query = MeleeQuery(userCharacter: userCharacter, enemyCharacter: enemyCharacter, helpType: helpType)
+        let query = MeleeQuery(userCharacter: userCharacter, enemyCharacter: enemyCharacter, helpType: helpType, skillLevel: skillType)
         self.currentQuery = query
         isLoading = true
         
@@ -114,6 +121,7 @@ struct MeleeQuery {
     var userCharacter: Character
     var enemyCharacter: Character
     var helpType: HelpType
+    var skillLevel: SkillType
     
     var firstMessage: String {
         "I am playing \(userCharacter) against \(enemyCharacter). Give me advice in this matchup specifically around the area of \(helpType)"
@@ -142,13 +150,15 @@ struct MeleeQuery {
     
     var messageHistory: [ChatQuery.ChatCompletionMessageParam]
     
-    init(userCharacter: Character, enemyCharacter: Character, helpType: HelpType) {
+    init(userCharacter: Character, enemyCharacter: Character, helpType: HelpType, skillLevel: SkillType) {
         self.userCharacter = userCharacter
         self.enemyCharacter = enemyCharacter
         self.helpType = helpType
+        self.skillLevel = skillLevel
+        
         self.messageHistory = [
-            .system(.init(content: "You are an expert super smash bros. melee tutor. You will be given the user's melee character, their opponents character, and then the type of advice they want. Give a response back that is specific to the type they wanted and in the matchup they are playing. Do not give any information or answer any questions that dont directly apply to super smash brothers melee. For my first question, response with 3-5 main points that are easy to follow and implement. Give a response as if it was going to be written in a guide, not conversationally. For formatting, return it in markdown. Use this as an example of what markdown is compatible: \(markdownExample)")),
-            .user(.init(content: .string("I am playing \(userCharacter) against \(enemyCharacter). Give me advice in this matchup specifically around the area of \(helpType)")))
+            .system(.init(content: "You are an expert super smash bros. melee tutor. You will be given the user's melee character, their opponents character, and then the type of advice they want. Give a response back that is specific to the type they wanted and in the matchup they are playing. You need to also tailor the advice to their skill level. If they are a beginner, don't give them advice that is too technical. Instead focus on the key fundamentals of the matchup. If they are an intermediate you can start to mix in some technical movements or harder to execute moves, and also you can start getting into deeper descriptions. If they are advanced, assume they will be able to execute anything required to win, and focus on the high level of the matchup and what it takes to win. Do not give any information or answer any questions that dont directly apply to super smash brothers melee. For my first question, response with 3-5 main points that are easy to follow and implement. Give a response as if it was going to be written in a guide, not conversationally. For formatting, return it in markdown. Follow this example of markdown with notice of the things like spacing and format: \(markdownExample)")),
+            .user(.init(content: .string("I am playing \(userCharacter.name) against \(enemyCharacter.name). Give me advice in this matchup specifically around the area of \(helpType). Keep your advice helpful to a player of my skill level of: \(skillLevel)")))
         ]
     }
     
@@ -165,5 +175,4 @@ struct MeleeQuery {
 }
 
 
-let exampleQuery = MeleeQuery(userCharacter: CharacterData.allCharacters[0], enemyCharacter: CharacterData.allCharacters[1], helpType: HelpType.neutral)
 

@@ -47,14 +47,13 @@ class OpenAIService: ObservableObject {
         let query = ChatQuery(
             messages: messages,
             model: .gpt4_o,
-            frequencyPenalty: 1,  // Penalize repetition
+            frequencyPenalty: 0.5,  // Penalize repetition
             maxTokens: 1000,
-            presencePenalty: 1,  // Encourage new topics
-            temperature: 1,  // Increase creativity
-            topP: 0.8  // Consider more diverse options
+            presencePenalty: 0,  // Encourage new topics
+            temperature: 0.5,  // Increase creativity
+            topP: 0.5  // Consider more diverse options
         )
-    
-        
+        print(query)
         do {
             let result = try await openAI.chats(query: query)
             guard let finalString = result.choices.first?.message.content?.string else {
