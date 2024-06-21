@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import OpenAI
+import UIKit
 
 enum HelpType: String, CaseIterable, Identifiable {
     case neutral, punish, defense
@@ -18,8 +19,7 @@ enum HelpType: String, CaseIterable, Identifiable {
     
     
     private var openAI = OpenAIService()
-    
-    
+   
     @Published var showUserPicker = false
     @Published var showEnemyPicker = false
     @Published var isLoading:Bool = false
@@ -118,6 +118,27 @@ struct MeleeQuery {
     var firstMessage: String {
         "I am playing \(userCharacter) against \(enemyCharacter). Give me advice in this matchup specifically around the area of \(helpType)"
     }
+    let markdownExample: String = """
+    ## Fox vs Jigglypuff: *Neutral Game*
+    
+    This is a brief paragraph overview of Fox vs. jigglypuff neutral game designed to help give me an overview before diving into the specific examples.
+    
+    1. ### Dash Dance and Mix-Ups:
+        - Point 1 about this
+    
+        - Point 2 about this
+    
+    2. ### Effective Use of Aerials:
+        - Point 1
+    
+        - Point 2
+    3. ### Up-tilt as an Anti-Air Tool:
+        - Point 1
+    
+        - Point 2
+    
+    This is a final brief summary of all we talked about to help bring it home and digest all the content.
+    """
     
     var messageHistory: [ChatQuery.ChatCompletionMessageParam]
     
@@ -126,7 +147,7 @@ struct MeleeQuery {
         self.enemyCharacter = enemyCharacter
         self.helpType = helpType
         self.messageHistory = [
-            .system(.init(content: "You are an expert super smash bros. melee tutor. You will be given the user's melee character, their opponents character, and then the type of advice they want. Give a response back that is specific to the type they wanted and in the matchup they are playing. Do not give any information or answer any questions that dont directly apply to super smash brothers melee.")),
+            .system(.init(content: "You are an expert super smash bros. melee tutor. You will be given the user's melee character, their opponents character, and then the type of advice they want. Give a response back that is specific to the type they wanted and in the matchup they are playing. Do not give any information or answer any questions that dont directly apply to super smash brothers melee. For my first question, response with 3-5 main points that are easy to follow and implement. Give a response as if it was going to be written in a guide, not conversationally. For formatting, return it in markdown. Use this as an example of what markdown is compatible: \(markdownExample)")),
             .user(.init(content: .string("I am playing \(userCharacter) against \(enemyCharacter). Give me advice in this matchup specifically around the area of \(helpType)")))
         ]
     }
@@ -145,3 +166,4 @@ struct MeleeQuery {
 
 
 let exampleQuery = MeleeQuery(userCharacter: CharacterData.allCharacters[0], enemyCharacter: CharacterData.allCharacters[1], helpType: HelpType.neutral)
+

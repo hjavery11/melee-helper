@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MarkdownUI
 
 struct HelpResponseView: View {
     
@@ -31,93 +32,95 @@ struct HelpResponseView: View {
                     if(viewModel.isLoading){
                         LoadingView()
                             .offset(y:250)
+                    } else{
+                        //  Text(viewModel.response)
+                        Markdown(viewModel.response)
                     }
-                    Text(viewModel.response)
-                        .padding()
+                  
                 }
+                .scrollDismissesKeyboard(.immediately)
+                
             }
-            .scrollDismissesKeyboard(.immediately)
-            
+            .padding(.top,70)
+            .padding(.bottom,20)
+            .overlay(alignment: .topLeading) {
+                GeometryReader { geometry in
+                    HStack {
+                        Button {
+                            dismiss()
+                        } label: {
+                            XDismissButton()
+                        }
+                        Spacer()
+                        
+                        HStack {
+                            if expandTextField {
+                                TextField("Enter a follow-up question", text: $userQuestion, onEditingChanged: { editingChanged in
+                                    if !editingChanged && userQuestion.isEmpty {
+                                        withAnimation {
+                                            expandTextField = false
+                                        }
+                                    }
+                                })
+                                .padding(.leading, 10)
+                                .submitLabel(.search)
+                                .disabled(viewModel.isLoading)
+                                .focused($isFocused)
+                                .keyboardType(.alphabet)
+                                .autocorrectionDisabled()
+                                .onSubmit {
+                                    if !userQuestion.isEmpty{
+                                        viewModel.getFollowUpResponse(followUpQuestion: userQuestion)
+                                        userQuestion = ""
+                                    }
+                                }
+                            }
+                            
+                            Button {
+                                if expandTextField {
+                                    if !userQuestion.isEmpty {
+                                        viewModel.getFollowUpResponse(followUpQuestion: userQuestion)
+                                        userQuestion = ""
+                                    } else {
+                                        withAnimation {
+                                            expandTextField.toggle()
+                                            isFocused = false
+                                        }
+                                    }
+                                } else {
+                                    withAnimation {
+                                        expandTextField.toggle()
+                                        isFocused = true
+                                    }
+                                }
+                            } label: {
+                                Image(systemName: "magnifyingglass")
+                                    .tint(Color(.label))
+                                    .imageScale(.large)
+                                    .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+                            }
+                            .keyboardShortcut(.defaultAction)
+                        }
+                        .padding(5)
+                        .frame(width: expandTextField ? 300 : 44, alignment: .center)
+                        .cornerRadius(16)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 16)
+                                .inset(by: 0.5)
+                                .stroke(Color(.meleeOrange), lineWidth: expandTextField ? 1:0)
+                        )
+                        .transition(.move(edge: .trailing))
+                        .opacity(viewModel.isLoading ? 0:1)
+                    }
+                }
+                .frame(height: 50)
+            }
         }
-        .padding(.top,70)
-        .padding(.bottom,20)
-        .overlay(alignment: .topLeading) {
-                  GeometryReader { geometry in
-                      HStack {
-                          Button {
-                              dismiss()
-                          } label: {
-                              XDismissButton()
-                          }
-                          Spacer()
-                          
-                          HStack {
-                              if expandTextField {
-                                  TextField("Enter a follow-up question", text: $userQuestion, onEditingChanged: { editingChanged in
-                                      if !editingChanged && userQuestion.isEmpty {
-                                          withAnimation {
-                                              expandTextField = false
-                                          }
-                                      }
-                                  })
-                                  .padding(.leading, 10)
-                                  .submitLabel(.search)
-                                  .disabled(viewModel.isLoading)
-                                  .focused($isFocused)
-                                  .keyboardType(.alphabet)
-                                  .autocorrectionDisabled()
-                                  .onSubmit {
-                                      if !userQuestion.isEmpty{
-                                          viewModel.getFollowUpResponse(followUpQuestion: userQuestion)
-                                          userQuestion = ""
-                                      }
-                                  }
-                              }
-                              
-                              Button {
-                                  if expandTextField {
-                                      if !userQuestion.isEmpty {
-                                          viewModel.getFollowUpResponse(followUpQuestion: userQuestion)
-                                          userQuestion = ""
-                                      } else {
-                                          withAnimation {
-                                              expandTextField.toggle()
-                                              isFocused = false
-                                          }
-                                      }
-                                  } else {
-                                      withAnimation {
-                                          expandTextField.toggle()
-                                          isFocused = true
-                                      }
-                                  }
-                              } label: {
-                                  Image(systemName: "magnifyingglass")
-                                      .tint(Color(.label))
-                                      .imageScale(.large)
-                                      .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
-                              }
-                              .keyboardShortcut(.defaultAction)
-                          }
-                          .padding(5)
-                          .frame(width: expandTextField ? 300 : 44, alignment: .center)
-                          .cornerRadius(16)
-                          .overlay(
-                              RoundedRectangle(cornerRadius: 16)
-                                  .inset(by: 0.5)
-                                  .stroke(Color(.meleeOrange), lineWidth: expandTextField ? 1:0)
-                          )
-                          .transition(.move(edge: .trailing))
-                          .opacity(viewModel.isLoading ? 0:1)
-                      }
-                  }
-                  .frame(height: 50)
-              }
-          }
-      }
-
-#Preview {
-    HelpResponseView(viewModel: MeleeHelpViewModel())
+    }
 }
-
-
+    
+    #Preview {
+        HelpResponseView(viewModel: MeleeHelpViewModel())
+    }
+    
+    

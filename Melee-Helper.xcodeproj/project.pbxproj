@@ -22,6 +22,8 @@
 		FA2A7B572C22676F008870EC /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = FA2A7B562C22676F008870EC /* FirebaseCrashlytics */; };
 		FA2A7B672C23F540008870EC /* HelpResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B662C23F540008870EC /* HelpResponseView.swift */; };
 		FA2A7B6B2C248C2A008870EC /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B6A2C248C2A008870EC /* XDismissButton.swift */; };
+		FA2A7B912C261A0B008870EC /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = FA2A7B902C261A0B008870EC /* MarkdownUI */; };
+		FA2A7B932C261E6F008870EC /* MarkdownTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B922C261E6E008870EC /* MarkdownTest.swift */; };
 		FABABC372C1B64DB00654DE6 /* Melee_HelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */; };
 		FABABC392C1B64DB00654DE6 /* MeleeHomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC382C1B64DB00654DE6 /* MeleeHomeScreenView.swift */; };
 		FABABC3B2C1B64DD00654DE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FABABC3A2C1B64DD00654DE6 /* Assets.xcassets */; };
@@ -50,6 +52,7 @@
 		FA2A7B652C227E14008870EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FA2A7B662C23F540008870EC /* HelpResponseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpResponseView.swift; sourceTree = "<group>"; };
 		FA2A7B6A2C248C2A008870EC /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
+		FA2A7B922C261E6E008870EC /* MarkdownTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownTest.swift; sourceTree = "<group>"; };
 		FABABC332C1B64DB00654DE6 /* Melee-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Melee-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Melee_HelperApp.swift; sourceTree = "<group>"; };
 		FABABC382C1B64DB00654DE6 /* MeleeHomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeHomeScreenView.swift; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2A7B912C261A0B008870EC /* MarkdownUI in Frameworks */,
 				FA2A7B3E2C2107F7008870EC /* OpenAI in Frameworks */,
 				FA2A7B572C22676F008870EC /* FirebaseCrashlytics in Frameworks */,
 			);
@@ -203,6 +207,7 @@
 		FABABC4F2C1B748B00654DE6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				FA2A7B922C261E6E008870EC /* MarkdownTest.swift */,
 				FABABC4C2C1B739800654DE6 /* MeleeCharacterDetailView.swift */,
 				FABABC4A2C1B6EBD00654DE6 /* MeleeCharacterTitleView.swift */,
 				FABABC502C1B74A600654DE6 /* MainBackgroundView.swift */,
@@ -232,6 +237,7 @@
 			packageProductDependencies = (
 				FA2A7B3D2C2107F7008870EC /* OpenAI */,
 				FA2A7B562C22676F008870EC /* FirebaseCrashlytics */,
+				FA2A7B902C261A0B008870EC /* MarkdownUI */,
 			);
 			productName = "Melee-Helper";
 			productReference = FABABC332C1B64DB00654DE6 /* Melee-Helper.app */;
@@ -264,6 +270,7 @@
 			packageReferences = (
 				FA2A7B3C2C2107F7008870EC /* XCRemoteSwiftPackageReference "OpenAI" */,
 				FA2A7B552C22676F008870EC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				FA2A7B8F2C261A0B008870EC /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 			);
 			productRefGroup = FABABC342C1B64DB00654DE6 /* Products */;
 			projectDirPath = "";
@@ -336,6 +343,7 @@
 				FA2A7AE72C1C09C9008870EC /* MeleeImageView.swift in Sources */,
 				FABABC542C1B777500654DE6 /* MeleeCharacterGridViewModel.swift in Sources */,
 				FABABC512C1B74A600654DE6 /* MainBackgroundView.swift in Sources */,
+				FA2A7B932C261E6F008870EC /* MarkdownTest.swift in Sources */,
 				FA2A7B402C2152B2008870EC /* LoadingView.swift in Sources */,
 				FA2A7B6B2C248C2A008870EC /* XDismissButton.swift in Sources */,
 			);
@@ -570,6 +578,14 @@
 				minimumVersion = 10.28.0;
 			};
 		};
+		FA2A7B8F2C261A0B008870EC /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -582,6 +598,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA2A7B552C22676F008870EC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
+		};
+		FA2A7B902C261A0B008870EC /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA2A7B8F2C261A0B008870EC /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
