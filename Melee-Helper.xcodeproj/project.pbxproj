@@ -24,6 +24,8 @@
 		FA2A7B6B2C248C2A008870EC /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B6A2C248C2A008870EC /* XDismissButton.swift */; };
 		FA2A7B912C261A0B008870EC /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = FA2A7B902C261A0B008870EC /* MarkdownUI */; };
 		FA2A7B932C261E6F008870EC /* MarkdownTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B922C261E6E008870EC /* MarkdownTest.swift */; };
+		FA2A7B952C27853A008870EC /* ResponseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B942C27853A008870EC /* ResponseBuilder.swift */; };
+		FA2A7B972C27870A008870EC /* JSONResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B962C27870A008870EC /* JSONResponseView.swift */; };
 		FABABC372C1B64DB00654DE6 /* Melee_HelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */; };
 		FABABC392C1B64DB00654DE6 /* MeleeHomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC382C1B64DB00654DE6 /* MeleeHomeScreenView.swift */; };
 		FABABC3B2C1B64DD00654DE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FABABC3A2C1B64DD00654DE6 /* Assets.xcassets */; };
@@ -53,6 +55,8 @@
 		FA2A7B662C23F540008870EC /* HelpResponseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpResponseView.swift; sourceTree = "<group>"; };
 		FA2A7B6A2C248C2A008870EC /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
 		FA2A7B922C261E6E008870EC /* MarkdownTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownTest.swift; sourceTree = "<group>"; };
+		FA2A7B942C27853A008870EC /* ResponseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseBuilder.swift; sourceTree = "<group>"; };
+		FA2A7B962C27870A008870EC /* JSONResponseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResponseView.swift; sourceTree = "<group>"; };
 		FABABC332C1B64DB00654DE6 /* Melee-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Melee-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Melee_HelperApp.swift; sourceTree = "<group>"; };
 		FABABC382C1B64DB00654DE6 /* MeleeHomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeHomeScreenView.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 				FA2A7B362C2105C7008870EC /* MeleeHelpViewModel.swift */,
 				FA2A7AEF2C1D5BE6008870EC /* MeleeHelpView.swift */,
 				FA2A7B662C23F540008870EC /* HelpResponseView.swift */,
+				FA2A7B962C27870A008870EC /* JSONResponseView.swift */,
 			);
 			path = "Third Tab";
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				FA2A7B3A2C210785008870EC /* OpenAIService.swift */,
+				FA2A7B942C27853A008870EC /* ResponseBuilder.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -338,7 +344,9 @@
 				FA2A7B352C20DFE7008870EC /* CharacterPickerView.swift in Sources */,
 				FABABC4D2C1B739800654DE6 /* MeleeCharacterDetailView.swift in Sources */,
 				FABABC372C1B64DB00654DE6 /* Melee_HelperApp.swift in Sources */,
+				FA2A7B972C27870A008870EC /* JSONResponseView.swift in Sources */,
 				FA2A7AE92C1C1505008870EC /* CameraView.swift in Sources */,
+				FA2A7B952C27853A008870EC /* ResponseBuilder.swift in Sources */,
 				FA2A7AF02C1D5BE6008870EC /* MeleeHelpView.swift in Sources */,
 				FA2A7AE72C1C09C9008870EC /* MeleeImageView.swift in Sources */,
 				FABABC542C1B777500654DE6 /* MeleeCharacterGridViewModel.swift in Sources */,

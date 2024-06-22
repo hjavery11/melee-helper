@@ -33,8 +33,11 @@ struct HelpResponseView: View {
                         LoadingView()
                             .offset(y:250)
                     } else{
-                      //  Text(viewModel.response)
-                        Markdown(viewModel.response)
+                        if let jsonResponse = ResponseBuilder().parseJSON(rawString: viewModel.response) {
+                                    JSONResponseView(response: jsonResponse)
+                                } else {
+                                    Text("Failed to load data from string response:\n\(viewModel.response)")
+                                }
                     }
                   
                 }
