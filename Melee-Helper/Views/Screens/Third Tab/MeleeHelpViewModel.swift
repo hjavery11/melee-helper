@@ -89,13 +89,20 @@ enum SkillType: String, CaseIterable, Identifiable {
         
         responseTask = Task {
             do {
-                let response = try await openAI.fetchChatCompletion(messages: query.messageHistory, newChat: false)
+                var responseString = try await openAI.fetchChatCompletion(messages: query.messageHistory, newChat: false)
                 
                 // Only update the response if the taskID matches the currentTaskID
                 if taskID == currentTaskID {
-                    self.response = response
-                    query.appendResponseMessage(response)
+                    if ResponseBuilder().parseJSON(rawString: responseString) == nil {
+                        print("json decoding failed in openAIService. Attempting to resubmit")
+                        let retryMessage = ChatQuery.ChatCompletionMessageParam(role: .user, content: "This did not follow the correct JSON format I gave you. Return it following the correct format.")
+                        query.messageHistory.append(retryMessage!)
+                        responseString = try await openAI.fetchChatCompletion(messages: query.messageHistory, newChat: false)
+                    }
+                    self.response = responseString
+                    query.appendResponseMessage(responseString)
                     self.currentQuery = query
+                    print(self.response)
                 }
             } catch {
                 // Only update the response if the taskID matches the currentTaskID
@@ -139,7 +146,7 @@ struct MeleeQuery {
         
         self.messageHistory = [
             
-            .system(.init(content: "You are an expert super smash bros. melee tutor. You will be given the user's melee character, their opponents character, and then the type of advice they want. Give a response back that is specific to the type they wanted and in the matchup they are playing. Do not give any information or answer any questions that dont directly apply to super smash brothers melee. Return any responses back in JSON format that conforms to this model so it always decodable: \(exampleJSONString)")),
+            .system(.init(content: "You are an expert super smash bros. melee tutor. You will be given the user's melee character, their opponents character, and then the type of advice they want. Give a response back that is specific to the type they wanted and in the matchup they are playing. Do not give any information or answer any questions that dont directly apply to super smash brothers melee. If they ask something unrelated, return a simple message only using the overview field telling them why you couldn't answer their question. Return any responses back in JSON format that conforms to this model so it always decodable: \(exampleJSONString)")),
             
             .user(.init(content: .string("I am playing \(userCharacter.name) against \(enemyCharacter.name). Give me advice in this matchup specifically around the area of \(helpType). Keep your advice helpful to a player of my skill level of: \(skillLevel)")))
         ]
