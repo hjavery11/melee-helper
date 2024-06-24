@@ -10,7 +10,8 @@ import Foundation
 let exampleJSONString = """
 struct JSONResponse: Decodable {
     let title: String?
-    let overview: String?
+    let subtitle: String?
+    let overview: String
     let sections: [Section]?
     let summary: String?
     
@@ -18,7 +19,24 @@ struct JSONResponse: Decodable {
         let title: String
         let points: [String]
     }
-}
+    
+    
+    //Example JSONResponse that only returns 1 section
+//    {
+//        "title": "Fox vs Jigglypuff",
+//        "subtitle": "Neutral Game",
+//        "overview": "Brief overview about this before getting into points",
+//        "sections": [
+//            {
+//                "title": "First tip",
+//                "points": [
+//                "first point about tip",
+//                "second point about tip"
+//                ]
+//            }
+//        ],
+//        "summary": "closing words about this topic"
+//    }
 """
 
 struct ResponseBuilder {
@@ -41,7 +59,8 @@ struct ResponseBuilder {
 
 struct JSONResponse: Decodable {
     let title: String?
-    let overview: String?
+    let subtitle: String?
+    let overview: String
     let sections: [Section]?
     let summary: String?
     
@@ -49,4 +68,24 @@ struct JSONResponse: Decodable {
         let title: String
         let points: [String]
     }
+    
+    
+    //Example JSONResponse that only returns 1 section
+//    {
+//        "title": "Fox vs Jigglypuff",
+//        "subtitle": "Neutral Game",
+//        "overview": "Brief overview about this before getting into points",
+//        "sections": [
+//            {
+//                "title": "First tip",
+//                "points": [
+//                "first point about tip",
+//                "second point about tip"
+//                ]
+//            }
+//        ],
+//        "summary": "closing words about this topic"
+//    }
+    
+    
 }

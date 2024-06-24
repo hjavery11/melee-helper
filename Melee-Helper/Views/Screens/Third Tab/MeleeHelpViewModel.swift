@@ -102,7 +102,7 @@ enum SkillType: String, CaseIterable, Identifiable {
                     self.response = responseString
                     query.appendResponseMessage(responseString)
                     self.currentQuery = query
-                    print(self.response)
+                  
                 }
             } catch {
                 // Only update the response if the taskID matches the currentTaskID
@@ -120,6 +120,14 @@ enum SkillType: String, CaseIterable, Identifiable {
         responseTask?.cancel()
         responseTask = nil
         currentTaskID = nil // Invalidate the current task
+    }
+    
+    func swapCharacters() {
+        let storedUserCharacter = userCharacter
+        let storedEnemyCharacter = enemyCharacter
+        
+        userCharacter = storedEnemyCharacter
+        enemyCharacter = storedUserCharacter
     }
     
 }

@@ -19,11 +19,17 @@ struct JSONResponseView: View {
                         .padding(.bottom, 5)
                 }
                 
-                if response.overview != nil {
-                    Text(response.overview!)
+                if response.subtitle != nil {
+                    Text(response.subtitle!)
+                        .font(.title2)
+                        .italic()
+                }
+                
+              
+                    Text(response.overview)
                         .font(.body)
                         .padding(.bottom, 10)
-                }
+          
                 
                 if response.sections != nil {
                     ForEach(Array(response.sections!.enumerated()), id: \.element.title) { index, section in

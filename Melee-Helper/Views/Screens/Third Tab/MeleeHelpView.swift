@@ -35,11 +35,21 @@ struct MeleeHelpView: View {
                         CharacterPickerView(selectedCharacter: $viewModel.userCharacter, isPresented: $viewModel.showUserPicker)
                     }
                     
-                    VStack{
+                    VStack(spacing:5){
+                        Button{
+                            viewModel.swapCharacters()
+                        } label: {
+                            Image(systemName: "arrow.triangle.swap")
+                                .imageScale(.large)
+                                .rotationEffect(.degrees(90))
+                                .offset(x: -2)
+                        }
+                        
                         Text("vs.")
                             .font(.title)
+                         
                     }
-                    .padding(.top,40)
+               
                     
                     
                     Button{
