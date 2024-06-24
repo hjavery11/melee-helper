@@ -22,11 +22,6 @@ class OpenAIService: ObservableObject {
     }
     
     private func initializeOpenAI() throws {
-        // Access environment variables for debug in xcode
-//        guard let apiKey = ProcessInfo.processInfo.environment["OPENAI_API_KEY"],
-//              let organization = ProcessInfo.processInfo.environment["OPENAI_ORGANIZATION"] else {
-//            throw InitializationError.missingEnvironmentVariables
-//        }
       
         guard let apiKey = Bundle.main.infoDictionary?["OPENAI_API_KEY"],
               let organization = Bundle.main.infoDictionary?["OPENAI_ORGANIZATION"] else {
@@ -47,23 +42,25 @@ class OpenAIService: ObservableObject {
         let query = ChatQuery(
             messages: messages,
             model: .gpt4_o,
-            frequencyPenalty: 0.5,  // Penalize repetition
+            frequencyPenalty: 0.1,  // Penalize repetition
             maxTokens: 1000,
-            presencePenalty: 0,  // Encourage new topics
-            temperature: 0.5,  // Increase creativity
-            topP: 0.5  // Consider more diverse options
+            presencePenalty: 0, 
+            responseFormat: ChatQuery.ResponseFormat.jsonObject,
+            temperature: 0.3,  // Increase creativity
+            topP: 1.0 // Consider more diverse options
         )
-        print(query)
+        //print(query.messages)
         do {
             let result = try await openAI.chats(query: query)
-            guard let finalString = result.choices.first?.message.content?.string else {
+            guard let resultString = result.choices.first?.message.content?.string else {
                 throw NSError(domain: "OpenAIErrorDomain", code: 0, userInfo: [NSLocalizedDescriptionKey: "No content found in response"])
             }
-            print("completed chat gpt call and got response")
-            return finalString
+            return resultString
+           
         } catch {
             throw error
         }
+        
     }
     
     enum InitializationError: Error, LocalizedError {

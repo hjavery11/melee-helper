@@ -21,6 +21,7 @@ enum SkillType: String, CaseIterable, Identifiable {
 }
 
 
+
 @MainActor class MeleeHelpViewModel: ObservableObject {
     
     
@@ -58,7 +59,7 @@ enum SkillType: String, CaseIterable, Identifiable {
         isLoading = true
         
         responseTask = Task {
-            do {
+            do {              
                 let response = try await openAI.fetchChatCompletion(messages: query.messageHistory, newChat: true)
                 // Only update the response if the taskID matches the currentTaskID
                 if taskID == currentTaskID {
@@ -79,23 +80,29 @@ enum SkillType: String, CaseIterable, Identifiable {
     }
     
     func getFollowUpResponse(followUpQuestion: String) {
-        self.response = ""
         guard var query = currentQuery else { return }
         let taskID = UUID()
         currentTaskID = taskID
         
-        query.appendUserMessage(followUpQuestion)
+        query.appendUserMessage(followUpQuestion + " - Return any response in JSON following the structure of \(exampleJSONString)")
         isLoading = true
         
         responseTask = Task {
             do {
-                let response = try await openAI.fetchChatCompletion(messages: query.messageHistory, newChat: false)
+                var responseString = try await openAI.fetchChatCompletion(messages: query.messageHistory, newChat: false)
                 
                 // Only update the response if the taskID matches the currentTaskID
                 if taskID == currentTaskID {
-                    self.response = response
-                    query.appendResponseMessage(response)
+                    if ResponseBuilder().parseJSON(rawString: responseString) == nil {
+                        print("json decoding failed in openAIService. Attempting to resubmit")
+                        let retryMessage = ChatQuery.ChatCompletionMessageParam(role: .user, content: "This did not follow the correct JSON format I gave you. Return it following the correct format.")
+                        query.messageHistory.append(retryMessage!)
+                        responseString = try await openAI.fetchChatCompletion(messages: query.messageHistory, newChat: false)
+                    }
+                    self.response = responseString
+                    query.appendResponseMessage(responseString)
                     self.currentQuery = query
+                    print(self.response)
                 }
             } catch {
                 // Only update the response if the taskID matches the currentTaskID
@@ -126,27 +133,8 @@ struct MeleeQuery {
     var firstMessage: String {
         "I am playing \(userCharacter) against \(enemyCharacter). Give me advice in this matchup specifically around the area of \(helpType)"
     }
-    let markdownExample: String = """
-    ## Fox vs Jigglypuff: *Neutral Game*
+  
     
-    This is a brief paragraph overview of Fox vs. jigglypuff neutral game designed to help give me an overview before diving into the specific examples.
-    
-    1. ### Dash Dance and Mix-Ups:
-        - Point 1 about this
-    
-        - Point 2 about this
-    
-    2. ### Effective Use of Aerials:
-        - Point 1
-    
-        - Point 2
-    3. ### Up-tilt as an Anti-Air Tool:
-        - Point 1
-    
-        - Point 2
-    
-    This is a final brief summary of all we talked about to help bring it home and digest all the content.
-    """
     
     var messageHistory: [ChatQuery.ChatCompletionMessageParam]
     
@@ -157,7 +145,9 @@ struct MeleeQuery {
         self.skillLevel = skillLevel
         
         self.messageHistory = [
-            .system(.init(content: "You are an expert super smash bros. melee tutor. You will be given the user's melee character, their opponents character, and then the type of advice they want. Give a response back that is specific to the type they wanted and in the matchup they are playing. You need to also tailor the advice to their skill level. If they are a beginner, don't give them advice that is too technical. Instead focus on the key fundamentals of the matchup. If they are an intermediate you can start to mix in some technical movements or harder to execute moves, and also you can start getting into deeper descriptions. If they are advanced, assume they will be able to execute anything required to win, and focus on the high level of the matchup and what it takes to win. Do not give any information or answer any questions that dont directly apply to super smash brothers melee. For my first question, response with 3-5 main points that are easy to follow and implement. Give a response as if it was going to be written in a guide, not conversationally. For formatting, return it in markdown. Follow this example of markdown with notice of the things like spacing and format: \(markdownExample)")),
+            
+            .system(.init(content: "You are an expert super smash bros. melee tutor. You will be given the user's melee character, their opponents character, and then the type of advice they want. Give a response back that is specific to the type they wanted and in the matchup they are playing. Do not give any information or answer any questions that dont directly apply to super smash brothers melee. If they ask something unrelated, return a simple message only using the overview field telling them why you couldn't answer their question. Return any responses back in JSON format that conforms to this model so it always decodable: \(exampleJSONString)")),
+            
             .user(.init(content: .string("I am playing \(userCharacter.name) against \(enemyCharacter.name). Give me advice in this matchup specifically around the area of \(helpType). Keep your advice helpful to a player of my skill level of: \(skillLevel)")))
         ]
     }
@@ -170,8 +160,6 @@ struct MeleeQuery {
     mutating func appendResponseMessage(_ message: String) {
         self.messageHistory.append(.assistant(.init(content: message)))
     }
-    
-    
 }
 
 
