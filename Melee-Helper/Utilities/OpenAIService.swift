@@ -49,21 +49,33 @@ class OpenAIService: ObservableObject {
             model: .gpt4_o,
             frequencyPenalty: 0.5,  // Penalize repetition
             maxTokens: 1000,
-            presencePenalty: 0,  // Encourage new topics
+            presencePenalty: 0, 
+            responseFormat: ChatQuery.ResponseFormat.jsonObject,
             temperature: 0.5,  // Increase creativity
-            topP: 0.5  // Consider more diverse options
+            topP: 0.5 // Consider more diverse options
         )
-        print(query)
+        //print(query)
         do {
             let result = try await openAI.chats(query: query)
-            guard let finalString = result.choices.first?.message.content?.string else {
+            guard let resultString = result.choices.first?.message.content?.string else {
                 throw NSError(domain: "OpenAIErrorDomain", code: 0, userInfo: [NSLocalizedDescriptionKey: "No content found in response"])
             }
-            print("completed chat gpt call and got response")
-            return finalString
+            
+            if ResponseBuilder().parseJSON(rawString: resultString) != nil {
+                print("json decoding success in openAIService")
+            } else {
+                print("json decoding failed in openAIService")
+            }
+            
+            return resultString
+           
         } catch {
             throw error
         }
+       
+        
+      
+        
     }
     
     enum InitializationError: Error, LocalizedError {

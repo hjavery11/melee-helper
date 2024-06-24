@@ -7,8 +7,19 @@
 
 import Foundation
 
-
-import Foundation
+let exampleJSONString = """
+struct JSONResponse: Decodable {
+    let title: String?
+    let overview: String?
+    let sections: [Section]?
+    let summary: String?
+    
+    struct Section: Decodable {
+        let title: String
+        let points: [String]
+    }
+}
+"""
 
 struct ResponseBuilder {
     private var decoder = JSONDecoder()
@@ -21,6 +32,7 @@ struct ResponseBuilder {
             return response
         } catch {
             print("Error decoding JSON: \(error)")
+            print("JSON data was: \(rawString)")
             return nil
         }
     }
@@ -28,10 +40,10 @@ struct ResponseBuilder {
 
 
 struct JSONResponse: Decodable {
-    let title: String
-    let overview: String
-    let sections: [Section]
-    let summary: String
+    let title: String?
+    let overview: String?
+    let sections: [Section]?
+    let summary: String?
     
     struct Section: Decodable {
         let title: String
