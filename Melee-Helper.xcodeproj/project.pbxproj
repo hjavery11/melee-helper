@@ -22,7 +22,6 @@
 		FA2A7B572C22676F008870EC /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = FA2A7B562C22676F008870EC /* FirebaseCrashlytics */; };
 		FA2A7B672C23F540008870EC /* HelpResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B662C23F540008870EC /* HelpResponseView.swift */; };
 		FA2A7B6B2C248C2A008870EC /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B6A2C248C2A008870EC /* XDismissButton.swift */; };
-		FA2A7B912C261A0B008870EC /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = FA2A7B902C261A0B008870EC /* MarkdownUI */; };
 		FA2A7B952C27853A008870EC /* ResponseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B942C27853A008870EC /* ResponseBuilder.swift */; };
 		FA2A7B972C27870A008870EC /* JSONResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B962C27870A008870EC /* JSONResponseView.swift */; };
 		FABABC372C1B64DB00654DE6 /* Melee_HelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */; };
@@ -73,7 +72,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA2A7B912C261A0B008870EC /* MarkdownUI in Frameworks */,
 				FA2A7B3E2C2107F7008870EC /* OpenAI in Frameworks */,
 				FA2A7B572C22676F008870EC /* FirebaseCrashlytics in Frameworks */,
 			);
@@ -240,7 +238,6 @@
 			packageProductDependencies = (
 				FA2A7B3D2C2107F7008870EC /* OpenAI */,
 				FA2A7B562C22676F008870EC /* FirebaseCrashlytics */,
-				FA2A7B902C261A0B008870EC /* MarkdownUI */,
 			);
 			productName = "Melee-Helper";
 			productReference = FABABC332C1B64DB00654DE6 /* Melee-Helper.app */;
@@ -602,11 +599,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA2A7B552C22676F008870EC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
-		};
-		FA2A7B902C261A0B008870EC /* MarkdownUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA2A7B8F2C261A0B008870EC /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
-			productName = MarkdownUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
