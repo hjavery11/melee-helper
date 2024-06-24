@@ -6,33 +6,37 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct MeleeCharacterDetailView: View {
     
     var character: Character
     
+    @State private var isAnimating = true
+    
     var body: some View {
-        ZStack{
-            MainBackgroundView()
-                .opacity(0.75)
-            VStack(alignment: .center , spacing:20){
-                Spacer()
-             
-                MeleeCharacterTitleView(character: character)
-                Text(character.description)
-                    .font(.body)
-                    .fontWeight(.medium)
-                    .padding()
-                   
-                Spacer()
-                Spacer()
-               
-            }
-            .padding()
+    
+        
+        VStack(alignment: .center , spacing:20){
+            MeleeCharacterTitleView(character: character)
+            Text(character.description)
+                .font(.body)
+                .fontWeight(.medium)
+                .padding()
             
-           
+            
+         
+            KFAnimatedImage(URL(fileURLWithPath: Bundle.main.path(forResource: "FoxDTiltSSBM", ofType: "gif")!))
+                      .frame(width: 300, height: 300)
+    
         }
+        .padding()
+        
     }
+    
+
+    
+    
 }
 
 #Preview {

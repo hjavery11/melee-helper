@@ -24,6 +24,9 @@
 		FA2A7B6B2C248C2A008870EC /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B6A2C248C2A008870EC /* XDismissButton.swift */; };
 		FA2A7B952C27853A008870EC /* ResponseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B942C27853A008870EC /* ResponseBuilder.swift */; };
 		FA2A7B972C27870A008870EC /* JSONResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B962C27870A008870EC /* JSONResponseView.swift */; };
+		FA2A7BA32C2A2216008870EC /* GIFImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7BA22C2A2216008870EC /* GIFImageView.swift */; };
+		FA2A7BA62C2A231C008870EC /* FoxDTiltSSBM.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BA52C2A231C008870EC /* FoxDTiltSSBM.gif */; };
+		FA2A7BA92C2A233C008870EC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FA2A7BA82C2A233C008870EC /* Kingfisher */; };
 		FABABC372C1B64DB00654DE6 /* Melee_HelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */; };
 		FABABC392C1B64DB00654DE6 /* MeleeHomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC382C1B64DB00654DE6 /* MeleeHomeScreenView.swift */; };
 		FABABC3B2C1B64DD00654DE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FABABC3A2C1B64DD00654DE6 /* Assets.xcassets */; };
@@ -54,6 +57,8 @@
 		FA2A7B6A2C248C2A008870EC /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
 		FA2A7B942C27853A008870EC /* ResponseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseBuilder.swift; sourceTree = "<group>"; };
 		FA2A7B962C27870A008870EC /* JSONResponseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResponseView.swift; sourceTree = "<group>"; };
+		FA2A7BA22C2A2216008870EC /* GIFImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFImageView.swift; sourceTree = "<group>"; };
+		FA2A7BA52C2A231C008870EC /* FoxDTiltSSBM.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FoxDTiltSSBM.gif; sourceTree = "<group>"; };
 		FABABC332C1B64DB00654DE6 /* Melee-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Melee-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Melee_HelperApp.swift; sourceTree = "<group>"; };
 		FABABC382C1B64DB00654DE6 /* MeleeHomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeHomeScreenView.swift; sourceTree = "<group>"; };
@@ -72,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2A7BA92C2A233C008870EC /* Kingfisher in Frameworks */,
 				FA2A7B3E2C2107F7008870EC /* OpenAI in Frameworks */,
 				FA2A7B572C22676F008870EC /* FirebaseCrashlytics in Frameworks */,
 			);
@@ -138,9 +144,18 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		FA2A7BA42C2A2304008870EC /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				FA2A7BA52C2A231C008870EC /* FoxDTiltSSBM.gif */,
+			);
+			path = Gifs;
+			sourceTree = "<group>";
+		};
 		FABABC2A2C1B64DB00654DE6 = {
 			isa = PBXGroup;
 			children = (
+				FA2A7BA42C2A2304008870EC /* Gifs */,
 				FABABC352C1B64DB00654DE6 /* Melee-Helper */,
 				FABABC342C1B64DB00654DE6 /* Products */,
 			);
@@ -214,6 +229,7 @@
 				FABABC502C1B74A600654DE6 /* MainBackgroundView.swift */,
 				FA2A7B3F2C2152B2008870EC /* LoadingView.swift */,
 				FA2A7B6A2C248C2A008870EC /* XDismissButton.swift */,
+				FA2A7BA22C2A2216008870EC /* GIFImageView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -238,6 +254,7 @@
 			packageProductDependencies = (
 				FA2A7B3D2C2107F7008870EC /* OpenAI */,
 				FA2A7B562C22676F008870EC /* FirebaseCrashlytics */,
+				FA2A7BA82C2A233C008870EC /* Kingfisher */,
 			);
 			productName = "Melee-Helper";
 			productReference = FABABC332C1B64DB00654DE6 /* Melee-Helper.app */;
@@ -271,6 +288,7 @@
 				FA2A7B3C2C2107F7008870EC /* XCRemoteSwiftPackageReference "OpenAI" */,
 				FA2A7B552C22676F008870EC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				FA2A7B8F2C261A0B008870EC /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				FA2A7BA72C2A233C008870EC /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = FABABC342C1B64DB00654DE6 /* Products */;
 			projectDirPath = "";
@@ -289,6 +307,7 @@
 				FABABC3E2C1B64DD00654DE6 /* Preview Assets.xcassets in Resources */,
 				FABABC3B2C1B64DD00654DE6 /* Assets.xcassets in Resources */,
 				FA2A7B542C22670C008870EC /* GoogleService-Info.plist in Resources */,
+				FA2A7BA62C2A231C008870EC /* FoxDTiltSSBM.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +346,7 @@
 			files = (
 				FA2A7B372C2105C7008870EC /* MeleeHelpViewModel.swift in Sources */,
 				FA2A7B672C23F540008870EC /* HelpResponseView.swift in Sources */,
+				FA2A7BA32C2A2216008870EC /* GIFImageView.swift in Sources */,
 				FA2A7B3B2C210785008870EC /* OpenAIService.swift in Sources */,
 				FA2A7AE22C1C06EC008870EC /* MeleeCharacterGridView.swift in Sources */,
 				FABABC392C1B64DB00654DE6 /* MeleeHomeScreenView.swift in Sources */,
@@ -587,6 +607,14 @@
 				minimumVersion = 2.3.1;
 			};
 		};
+		FA2A7BA72C2A233C008870EC /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -599,6 +627,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA2A7B552C22676F008870EC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
+		};
+		FA2A7BA82C2A233C008870EC /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA2A7BA72C2A233C008870EC /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
