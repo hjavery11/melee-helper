@@ -15,10 +15,12 @@ struct MeleeHomeScreenView: View {
         case gridview
         case imageview
         case homeview
+        case postmatchview
     }
     
     var body: some View {
         TabView(selection: $selection){
+            
             
           
             MeleeHelpView()
@@ -26,6 +28,13 @@ struct MeleeHomeScreenView: View {
                     Label("Home", systemImage: "house")
                 }
                 .tag(Tab.homeview)
+            
+            PostMatchView()
+                .tabItem{
+                    Label("Post-Match", systemImage: "gamecontroller")
+                }
+                .tag(Tab.postmatchview)
+            
             
             MeleeCharacterGridView()
                 .tabItem {
@@ -49,6 +58,8 @@ struct MeleeHomeScreenView: View {
         
         
     }
+    
+    
 }
 #Preview {
     MeleeHomeScreenView()

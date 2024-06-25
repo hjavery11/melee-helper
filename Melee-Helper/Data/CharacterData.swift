@@ -35,6 +35,6 @@ struct CharacterData {
         Character(name: "Pichu", imageName: "PichuHeadSSBM", description: "A smaller, lighter, and faster version of Pikachu, known for hurting itself with its own electric attacks."),
         Character(name: "Dr. Mario", imageName: "DrMarioHeadSSBM", description: "Mario's alter ego, using medical-themed attacks like Megavitamins and the Super Sheet."),
         Character(name: "Young Link", imageName: "YoungLinkHeadSSBM", description: "A younger version of Link with a similar but quicker and more agile fighting style, using a variety of weapons and items.")
-
     ]
+    
 }

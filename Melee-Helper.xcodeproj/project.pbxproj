@@ -25,8 +25,70 @@
 		FA2A7B952C27853A008870EC /* ResponseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B942C27853A008870EC /* ResponseBuilder.swift */; };
 		FA2A7B972C27870A008870EC /* JSONResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7B962C27870A008870EC /* JSONResponseView.swift */; };
 		FA2A7BA32C2A2216008870EC /* GIFImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7BA22C2A2216008870EC /* GIFImageView.swift */; };
-		FA2A7BA62C2A231C008870EC /* FoxDTiltSSBM.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BA52C2A231C008870EC /* FoxDTiltSSBM.gif */; };
 		FA2A7BA92C2A233C008870EC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FA2A7BA82C2A233C008870EC /* Kingfisher */; };
+		FA2A7BAC2C2B3D92008870EC /* PostMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7BAB2C2B3D92008870EC /* PostMatchView.swift */; };
+		FA2A7BEC2C2B3E6B008870EC /* fox_backair.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BAD2C2B3E6B008870EC /* fox_backair.gif */; };
+		FA2A7BED2C2B3E6B008870EC /* fox_downair.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BAE2C2B3E6B008870EC /* fox_downair.gif */; };
+		FA2A7BEE2C2B3E6B008870EC /* fox_specialdown.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BAF2C2B3E6B008870EC /* fox_specialdown.gif */; };
+		FA2A7BEF2C2B3E6B008870EC /* fox_forwardair.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BB02C2B3E6B008870EC /* fox_forwardair.gif */; };
+		FA2A7BF02C2B3E6B008870EC /* fox_neutralair.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BB12C2B3E6B008870EC /* fox_neutralair.gif */; };
+		FA2A7BF12C2B3E6B008870EC /* fox_specialneutral_aerial.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BB22C2B3E6B008870EC /* fox_specialneutral_aerial.gif */; };
+		FA2A7BF22C2B3E6B008870EC /* fox_specialneutral.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BB32C2B3E6B008870EC /* fox_specialneutral.gif */; };
+		FA2A7BF32C2B3E6B008870EC /* fox_upair.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BB42C2B3E6B008870EC /* fox_upair.gif */; };
+		FA2A7BF42C2B3E6B008870EC /* fox_upsmash.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BB52C2B3E6B008870EC /* fox_upsmash.gif */; };
+		FA2A7BF52C2B3E6B008870EC /* fox_specialup.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BB62C2B3E6B008870EC /* fox_specialup.gif */; };
+		FA2A7BF62C2B3E6B008870EC /* fox_uptilt.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BB72C2B3E6B008870EC /* fox_uptilt.gif */; };
+		FA2A7BF72C2B3E6B008870EC /* fox_airdodge.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BB82C2B3E6B008870EC /* fox_airdodge.gif */; };
+		FA2A7BF82C2B3E6B008870EC /* fox_rollback.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BB92C2B3E6B008870EC /* fox_rollback.gif */; };
+		FA2A7BF92C2B3E6B008870EC /* fox_dashattack.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BBA2C2B3E6B008870EC /* fox_dashattack.gif */; };
+		FA2A7BFA2C2B3E6B008870EC /* fox_dashgrab.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BBB2C2B3E6B008870EC /* fox_dashgrab.gif */; };
+		FA2A7BFB2C2B3E6B008870EC /* fox_downsmash.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BBC2C2B3E6B008870EC /* fox_downsmash.gif */; };
+		FA2A7BFC2C2B3E6B008870EC /* fox_downtilt.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BBD2C2B3E6B008870EC /* fox_downtilt.gif */; };
+		FA2A7BFD2C2B3E6B008870EC /* fox_rollforward.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BBE2C2B3E6B008870EC /* fox_rollforward.gif */; };
+		FA2A7BFE2C2B3E6B008870EC /* fox_specialside_aerial.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BBF2C2B3E6B008870EC /* fox_specialside_aerial.gif */; };
+		FA2A7BFF2C2B3E6B008870EC /* fox_specialside.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BC02C2B3E6B008870EC /* fox_specialside.gif */; };
+		FA2A7C002C2B3E6B008870EC /* fox_forwardsmash.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BC12C2B3E6B008870EC /* fox_forwardsmash.gif */; };
+		FA2A7C012C2B3E6B008870EC /* fox_forwardtilt_down.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BC22C2B3E6B008870EC /* fox_forwardtilt_down.gif */; };
+		FA2A7C022C2B3E6B008870EC /* fox_forwardtilt_forward.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BC32C2B3E6B008870EC /* fox_forwardtilt_forward.gif */; };
+		FA2A7C032C2B3E6B008870EC /* fox_forwardtilt_up.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BC42C2B3E6B008870EC /* fox_forwardtilt_up.gif */; };
+		FA2A7C042C2B3E6B008870EC /* fox_grab.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BC52C2B3E6B008870EC /* fox_grab.gif */; };
+		FA2A7C052C2B3E6B008870EC /* fox_jab1.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BC62C2B3E6B008870EC /* fox_jab1.gif */; };
+		FA2A7C062C2B3E6B008870EC /* fox_jab2.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BC72C2B3E6B008870EC /* fox_jab2.gif */; };
+		FA2A7C072C2B3E6B008870EC /* fox_rapidjab.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BC82C2B3E6B008870EC /* fox_rapidjab.gif */; };
+		FA2A7C082C2B3E6B008870EC /* fox_spotdodge.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BC92C2B3E6B008870EC /* fox_spotdodge.gif */; };
+		FA2A7C092C2B3E6B008870EC /* Marth_Air_Dodge_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BCB2C2B3E6B008870EC /* Marth_Air_Dodge_Hitbox_Melee.gif */; };
+		FA2A7C0A2C2B3E6B008870EC /* Marth_Back_Aerial_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BCC2C2B3E6B008870EC /* Marth_Back_Aerial_Hitbox_Melee.gif */; };
+		FA2A7C0B2C2B3E6B008870EC /* Marth_Back_Roll_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BCD2C2B3E6B008870EC /* Marth_Back_Roll_Hitbox_Melee.gif */; };
+		FA2A7C0C2C2B3E6B008870EC /* Marth_Dash_Attack_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BCE2C2B3E6B008870EC /* Marth_Dash_Attack_Hitbox_Melee.gif */; };
+		FA2A7C0D2C2B3E6B008870EC /* Marth_Dash_Grab_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BCF2C2B3E6B008870EC /* Marth_Dash_Grab_Hitbox_Melee.gif */; };
+		FA2A7C0E2C2B3E6B008870EC /* Marth_Down_Aerial_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BD02C2B3E6B008870EC /* Marth_Down_Aerial_Hitbox_Melee.gif */; };
+		FA2A7C0F2C2B3E6B008870EC /* Marth_Down_Smash_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BD12C2B3E6B008870EC /* Marth_Down_Smash_Hitbox_Melee.gif */; };
+		FA2A7C102C2B3E6B008870EC /* Marth_Down_Special_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BD22C2B3E6B008870EC /* Marth_Down_Special_Hitbox_Melee.gif */; };
+		FA2A7C112C2B3E6B008870EC /* Marth_Down_Tilt_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BD32C2B3E6B008870EC /* Marth_Down_Tilt_Hitbox_Melee.gif */; };
+		FA2A7C122C2B3E6B008870EC /* Marth_Forward_Aerial_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BD42C2B3E6B008870EC /* Marth_Forward_Aerial_Hitbox_Melee.gif */; };
+		FA2A7C132C2B3E6B008870EC /* Marth_Forward_Roll_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BD52C2B3E6B008870EC /* Marth_Forward_Roll_Hitbox_Melee.gif */; };
+		FA2A7C142C2B3E6B008870EC /* Marth_Forward_Smash_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BD62C2B3E6B008870EC /* Marth_Forward_Smash_Hitbox_Melee.gif */; };
+		FA2A7C152C2B3E6B008870EC /* Marth_Forward_Tilt_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BD72C2B3E6B008870EC /* Marth_Forward_Tilt_Hitbox_Melee.gif */; };
+		FA2A7C162C2B3E6B008870EC /* Marth_Grab_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BD82C2B3E6B008870EC /* Marth_Grab_Hitbox_Melee.gif */; };
+		FA2A7C172C2B3E6B008870EC /* Marth_Neutral_Aerial_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BD92C2B3E6B008870EC /* Marth_Neutral_Aerial_Hitbox_Melee.gif */; };
+		FA2A7C182C2B3E6B008870EC /* Marth_Neutral_Attack_Hitbox_1_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BDA2C2B3E6B008870EC /* Marth_Neutral_Attack_Hitbox_1_Melee.gif */; };
+		FA2A7C192C2B3E6B008870EC /* Marth_Neutral_Attack_Hitbox_2_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BDB2C2B3E6B008870EC /* Marth_Neutral_Attack_Hitbox_2_Melee.gif */; };
+		FA2A7C1A2C2B3E6B008870EC /* Marth_Neutral_Special_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BDC2C2B3E6B008870EC /* Marth_Neutral_Special_Hitbox_Melee.gif */; };
+		FA2A7C1B2C2B3E6B008870EC /* Marth_Side_Special_Hitbox_First_Hit_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BDD2C2B3E6B008870EC /* Marth_Side_Special_Hitbox_First_Hit_Melee.gif */; };
+		FA2A7C1C2C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Fourth_Hit_Down_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BDE2C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Fourth_Hit_Down_Melee.gif */; };
+		FA2A7C1D2C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Fourth_Hit_Neutral_Side_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BDF2C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Fourth_Hit_Neutral_Side_Melee.gif */; };
+		FA2A7C1E2C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Fourth_Hit_Up_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BE02C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Fourth_Hit_Up_Melee.gif */; };
+		FA2A7C1F2C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Second_Hit_Neutral_Side_Down_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BE12C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Second_Hit_Neutral_Side_Down_Melee.gif */; };
+		FA2A7C202C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Second_Hit_Up_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BE22C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Second_Hit_Up_Melee.gif */; };
+		FA2A7C212C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Third_Hit_Down_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BE32C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Third_Hit_Down_Melee.gif */; };
+		FA2A7C222C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Third_Hit_Neutral_Side_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BE42C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Third_Hit_Neutral_Side_Melee.gif */; };
+		FA2A7C232C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Third_Hit_Up_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BE52C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Third_Hit_Up_Melee.gif */; };
+		FA2A7C242C2B3E6B008870EC /* Marth_Spot_Dodge_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BE62C2B3E6B008870EC /* Marth_Spot_Dodge_Hitbox_Melee.gif */; };
+		FA2A7C252C2B3E6B008870EC /* Marth_Up_Aerial_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BE72C2B3E6B008870EC /* Marth_Up_Aerial_Hitbox_Melee.gif */; };
+		FA2A7C262C2B3E6B008870EC /* Marth_Up_Smash_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BE82C2B3E6B008870EC /* Marth_Up_Smash_Hitbox_Melee.gif */; };
+		FA2A7C272C2B3E6B008870EC /* Marth_Up_Special_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BE92C2B3E6B008870EC /* Marth_Up_Special_Hitbox_Melee.gif */; };
+		FA2A7C282C2B3E6B008870EC /* Marth_Up_Tilt_Hitbox_Melee.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA2A7BEA2C2B3E6B008870EC /* Marth_Up_Tilt_Hitbox_Melee.gif */; };
+		FA2A7C2A2C2B46E9008870EC /* MoveAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A7C292C2B46E9008870EC /* MoveAnimationView.swift */; };
 		FABABC372C1B64DB00654DE6 /* Melee_HelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */; };
 		FABABC392C1B64DB00654DE6 /* MeleeHomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABC382C1B64DB00654DE6 /* MeleeHomeScreenView.swift */; };
 		FABABC3B2C1B64DD00654DE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FABABC3A2C1B64DD00654DE6 /* Assets.xcassets */; };
@@ -58,7 +120,69 @@
 		FA2A7B942C27853A008870EC /* ResponseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseBuilder.swift; sourceTree = "<group>"; };
 		FA2A7B962C27870A008870EC /* JSONResponseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResponseView.swift; sourceTree = "<group>"; };
 		FA2A7BA22C2A2216008870EC /* GIFImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFImageView.swift; sourceTree = "<group>"; };
-		FA2A7BA52C2A231C008870EC /* FoxDTiltSSBM.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FoxDTiltSSBM.gif; sourceTree = "<group>"; };
+		FA2A7BAB2C2B3D92008870EC /* PostMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMatchView.swift; sourceTree = "<group>"; };
+		FA2A7BAD2C2B3E6B008870EC /* fox_backair.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_backair.gif; sourceTree = "<group>"; };
+		FA2A7BAE2C2B3E6B008870EC /* fox_downair.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_downair.gif; sourceTree = "<group>"; };
+		FA2A7BAF2C2B3E6B008870EC /* fox_specialdown.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_specialdown.gif; sourceTree = "<group>"; };
+		FA2A7BB02C2B3E6B008870EC /* fox_forwardair.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_forwardair.gif; sourceTree = "<group>"; };
+		FA2A7BB12C2B3E6B008870EC /* fox_neutralair.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_neutralair.gif; sourceTree = "<group>"; };
+		FA2A7BB22C2B3E6B008870EC /* fox_specialneutral_aerial.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_specialneutral_aerial.gif; sourceTree = "<group>"; };
+		FA2A7BB32C2B3E6B008870EC /* fox_specialneutral.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_specialneutral.gif; sourceTree = "<group>"; };
+		FA2A7BB42C2B3E6B008870EC /* fox_upair.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_upair.gif; sourceTree = "<group>"; };
+		FA2A7BB52C2B3E6B008870EC /* fox_upsmash.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_upsmash.gif; sourceTree = "<group>"; };
+		FA2A7BB62C2B3E6B008870EC /* fox_specialup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_specialup.gif; sourceTree = "<group>"; };
+		FA2A7BB72C2B3E6B008870EC /* fox_uptilt.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_uptilt.gif; sourceTree = "<group>"; };
+		FA2A7BB82C2B3E6B008870EC /* fox_airdodge.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_airdodge.gif; sourceTree = "<group>"; };
+		FA2A7BB92C2B3E6B008870EC /* fox_rollback.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_rollback.gif; sourceTree = "<group>"; };
+		FA2A7BBA2C2B3E6B008870EC /* fox_dashattack.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_dashattack.gif; sourceTree = "<group>"; };
+		FA2A7BBB2C2B3E6B008870EC /* fox_dashgrab.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_dashgrab.gif; sourceTree = "<group>"; };
+		FA2A7BBC2C2B3E6B008870EC /* fox_downsmash.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_downsmash.gif; sourceTree = "<group>"; };
+		FA2A7BBD2C2B3E6B008870EC /* fox_downtilt.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_downtilt.gif; sourceTree = "<group>"; };
+		FA2A7BBE2C2B3E6B008870EC /* fox_rollforward.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_rollforward.gif; sourceTree = "<group>"; };
+		FA2A7BBF2C2B3E6B008870EC /* fox_specialside_aerial.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_specialside_aerial.gif; sourceTree = "<group>"; };
+		FA2A7BC02C2B3E6B008870EC /* fox_specialside.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_specialside.gif; sourceTree = "<group>"; };
+		FA2A7BC12C2B3E6B008870EC /* fox_forwardsmash.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_forwardsmash.gif; sourceTree = "<group>"; };
+		FA2A7BC22C2B3E6B008870EC /* fox_forwardtilt_down.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_forwardtilt_down.gif; sourceTree = "<group>"; };
+		FA2A7BC32C2B3E6B008870EC /* fox_forwardtilt_forward.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_forwardtilt_forward.gif; sourceTree = "<group>"; };
+		FA2A7BC42C2B3E6B008870EC /* fox_forwardtilt_up.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_forwardtilt_up.gif; sourceTree = "<group>"; };
+		FA2A7BC52C2B3E6B008870EC /* fox_grab.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_grab.gif; sourceTree = "<group>"; };
+		FA2A7BC62C2B3E6B008870EC /* fox_jab1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_jab1.gif; sourceTree = "<group>"; };
+		FA2A7BC72C2B3E6B008870EC /* fox_jab2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_jab2.gif; sourceTree = "<group>"; };
+		FA2A7BC82C2B3E6B008870EC /* fox_rapidjab.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_rapidjab.gif; sourceTree = "<group>"; };
+		FA2A7BC92C2B3E6B008870EC /* fox_spotdodge.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fox_spotdodge.gif; sourceTree = "<group>"; };
+		FA2A7BCB2C2B3E6B008870EC /* Marth_Air_Dodge_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Air_Dodge_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BCC2C2B3E6B008870EC /* Marth_Back_Aerial_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Back_Aerial_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BCD2C2B3E6B008870EC /* Marth_Back_Roll_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Back_Roll_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BCE2C2B3E6B008870EC /* Marth_Dash_Attack_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Dash_Attack_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BCF2C2B3E6B008870EC /* Marth_Dash_Grab_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Dash_Grab_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BD02C2B3E6B008870EC /* Marth_Down_Aerial_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Down_Aerial_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BD12C2B3E6B008870EC /* Marth_Down_Smash_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Down_Smash_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BD22C2B3E6B008870EC /* Marth_Down_Special_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Down_Special_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BD32C2B3E6B008870EC /* Marth_Down_Tilt_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Down_Tilt_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BD42C2B3E6B008870EC /* Marth_Forward_Aerial_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Forward_Aerial_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BD52C2B3E6B008870EC /* Marth_Forward_Roll_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Forward_Roll_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BD62C2B3E6B008870EC /* Marth_Forward_Smash_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Forward_Smash_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BD72C2B3E6B008870EC /* Marth_Forward_Tilt_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Forward_Tilt_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BD82C2B3E6B008870EC /* Marth_Grab_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Grab_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BD92C2B3E6B008870EC /* Marth_Neutral_Aerial_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Neutral_Aerial_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BDA2C2B3E6B008870EC /* Marth_Neutral_Attack_Hitbox_1_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Neutral_Attack_Hitbox_1_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BDB2C2B3E6B008870EC /* Marth_Neutral_Attack_Hitbox_2_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Neutral_Attack_Hitbox_2_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BDC2C2B3E6B008870EC /* Marth_Neutral_Special_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Neutral_Special_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BDD2C2B3E6B008870EC /* Marth_Side_Special_Hitbox_First_Hit_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Side_Special_Hitbox_First_Hit_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BDE2C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Fourth_Hit_Down_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Side_Special_Hitbox_Fourth_Hit_Down_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BDF2C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Fourth_Hit_Neutral_Side_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Side_Special_Hitbox_Fourth_Hit_Neutral_Side_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BE02C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Fourth_Hit_Up_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Side_Special_Hitbox_Fourth_Hit_Up_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BE12C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Second_Hit_Neutral_Side_Down_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Side_Special_Hitbox_Second_Hit_Neutral_Side_Down_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BE22C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Second_Hit_Up_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Side_Special_Hitbox_Second_Hit_Up_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BE32C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Third_Hit_Down_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Side_Special_Hitbox_Third_Hit_Down_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BE42C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Third_Hit_Neutral_Side_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Side_Special_Hitbox_Third_Hit_Neutral_Side_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BE52C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Third_Hit_Up_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Side_Special_Hitbox_Third_Hit_Up_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BE62C2B3E6B008870EC /* Marth_Spot_Dodge_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Spot_Dodge_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BE72C2B3E6B008870EC /* Marth_Up_Aerial_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Up_Aerial_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BE82C2B3E6B008870EC /* Marth_Up_Smash_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Up_Smash_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BE92C2B3E6B008870EC /* Marth_Up_Special_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Up_Special_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7BEA2C2B3E6B008870EC /* Marth_Up_Tilt_Hitbox_Melee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Marth_Up_Tilt_Hitbox_Melee.gif; sourceTree = "<group>"; };
+		FA2A7C292C2B46E9008870EC /* MoveAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveAnimationView.swift; sourceTree = "<group>"; };
 		FABABC332C1B64DB00654DE6 /* Melee-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Melee-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABABC362C1B64DB00654DE6 /* Melee_HelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Melee_HelperApp.swift; sourceTree = "<group>"; };
 		FABABC382C1B64DB00654DE6 /* MeleeHomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeHomeScreenView.swift; sourceTree = "<group>"; };
@@ -89,33 +213,35 @@
 		FA2A7AE32C1C0883008870EC /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				FA2A7AEE2C1D5BDE008870EC /* Third Tab */,
-				FA2A7AE52C1C0899008870EC /* Second Screen */,
-				FA2A7AE42C1C0890008870EC /* First Tab */,
+				FA2A7BAA2C2B3D82008870EC /* Post-Match Helper */,
+				FA2A7AEE2C1D5BDE008870EC /* Pre-Match Helper */,
+				FA2A7AE52C1C0899008870EC /* Camera (Unused) */,
+				FA2A7AE42C1C0890008870EC /* Character Info */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		FA2A7AE42C1C0890008870EC /* First Tab */ = {
+		FA2A7AE42C1C0890008870EC /* Character Info */ = {
 			isa = PBXGroup;
 			children = (
+				FABABC4C2C1B739800654DE6 /* MeleeCharacterDetailView.swift */,
 				FA2A7AE12C1C06EC008870EC /* MeleeCharacterGridView.swift */,
 				FABABC532C1B777500654DE6 /* MeleeCharacterGridViewModel.swift */,
 			);
-			path = "First Tab";
+			path = "Character Info";
 			sourceTree = "<group>";
 		};
-		FA2A7AE52C1C0899008870EC /* Second Screen */ = {
+		FA2A7AE52C1C0899008870EC /* Camera (Unused) */ = {
 			isa = PBXGroup;
 			children = (
 				FA2A7AE62C1C09C9008870EC /* MeleeImageView.swift */,
 				FA2A7AE82C1C1505008870EC /* CameraView.swift */,
 				FA2A7AEA2C1C154F008870EC /* CameraViewController.swift */,
 			);
-			path = "Second Screen";
+			path = "Camera (Unused)";
 			sourceTree = "<group>";
 		};
-		FA2A7AEE2C1D5BDE008870EC /* Third Tab */ = {
+		FA2A7AEE2C1D5BDE008870EC /* Pre-Match Helper */ = {
 			isa = PBXGroup;
 			children = (
 				FA2A7B382C2105E6008870EC /* Picker */,
@@ -123,7 +249,7 @@
 				FA2A7AEF2C1D5BE6008870EC /* MeleeHelpView.swift */,
 				FA2A7B662C23F540008870EC /* HelpResponseView.swift */,
 			);
-			path = "Third Tab";
+			path = "Pre-Match Helper";
 			sourceTree = "<group>";
 		};
 		FA2A7B382C2105E6008870EC /* Picker */ = {
@@ -147,9 +273,93 @@
 		FA2A7BA42C2A2304008870EC /* Gifs */ = {
 			isa = PBXGroup;
 			children = (
-				FA2A7BA52C2A231C008870EC /* FoxDTiltSSBM.gif */,
+				FA2A7BCA2C2B3E6B008870EC /* Fox Animations */,
+				FA2A7BEB2C2B3E6B008870EC /* Marth Animations */,
 			);
 			path = Gifs;
+			sourceTree = "<group>";
+		};
+		FA2A7BAA2C2B3D82008870EC /* Post-Match Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FA2A7BAB2C2B3D92008870EC /* PostMatchView.swift */,
+			);
+			path = "Post-Match Helper";
+			sourceTree = "<group>";
+		};
+		FA2A7BCA2C2B3E6B008870EC /* Fox Animations */ = {
+			isa = PBXGroup;
+			children = (
+				FA2A7BAD2C2B3E6B008870EC /* fox_backair.gif */,
+				FA2A7BAE2C2B3E6B008870EC /* fox_downair.gif */,
+				FA2A7BAF2C2B3E6B008870EC /* fox_specialdown.gif */,
+				FA2A7BB02C2B3E6B008870EC /* fox_forwardair.gif */,
+				FA2A7BB12C2B3E6B008870EC /* fox_neutralair.gif */,
+				FA2A7BB22C2B3E6B008870EC /* fox_specialneutral_aerial.gif */,
+				FA2A7BB32C2B3E6B008870EC /* fox_specialneutral.gif */,
+				FA2A7BB42C2B3E6B008870EC /* fox_upair.gif */,
+				FA2A7BB52C2B3E6B008870EC /* fox_upsmash.gif */,
+				FA2A7BB62C2B3E6B008870EC /* fox_specialup.gif */,
+				FA2A7BB72C2B3E6B008870EC /* fox_uptilt.gif */,
+				FA2A7BB82C2B3E6B008870EC /* fox_airdodge.gif */,
+				FA2A7BB92C2B3E6B008870EC /* fox_rollback.gif */,
+				FA2A7BBA2C2B3E6B008870EC /* fox_dashattack.gif */,
+				FA2A7BBB2C2B3E6B008870EC /* fox_dashgrab.gif */,
+				FA2A7BBC2C2B3E6B008870EC /* fox_downsmash.gif */,
+				FA2A7BBD2C2B3E6B008870EC /* fox_downtilt.gif */,
+				FA2A7BBE2C2B3E6B008870EC /* fox_rollforward.gif */,
+				FA2A7BBF2C2B3E6B008870EC /* fox_specialside_aerial.gif */,
+				FA2A7BC02C2B3E6B008870EC /* fox_specialside.gif */,
+				FA2A7BC12C2B3E6B008870EC /* fox_forwardsmash.gif */,
+				FA2A7BC22C2B3E6B008870EC /* fox_forwardtilt_down.gif */,
+				FA2A7BC32C2B3E6B008870EC /* fox_forwardtilt_forward.gif */,
+				FA2A7BC42C2B3E6B008870EC /* fox_forwardtilt_up.gif */,
+				FA2A7BC52C2B3E6B008870EC /* fox_grab.gif */,
+				FA2A7BC62C2B3E6B008870EC /* fox_jab1.gif */,
+				FA2A7BC72C2B3E6B008870EC /* fox_jab2.gif */,
+				FA2A7BC82C2B3E6B008870EC /* fox_rapidjab.gif */,
+				FA2A7BC92C2B3E6B008870EC /* fox_spotdodge.gif */,
+			);
+			path = "Fox Animations";
+			sourceTree = "<group>";
+		};
+		FA2A7BEB2C2B3E6B008870EC /* Marth Animations */ = {
+			isa = PBXGroup;
+			children = (
+				FA2A7BCB2C2B3E6B008870EC /* Marth_Air_Dodge_Hitbox_Melee.gif */,
+				FA2A7BCC2C2B3E6B008870EC /* Marth_Back_Aerial_Hitbox_Melee.gif */,
+				FA2A7BCD2C2B3E6B008870EC /* Marth_Back_Roll_Hitbox_Melee.gif */,
+				FA2A7BCE2C2B3E6B008870EC /* Marth_Dash_Attack_Hitbox_Melee.gif */,
+				FA2A7BCF2C2B3E6B008870EC /* Marth_Dash_Grab_Hitbox_Melee.gif */,
+				FA2A7BD02C2B3E6B008870EC /* Marth_Down_Aerial_Hitbox_Melee.gif */,
+				FA2A7BD12C2B3E6B008870EC /* Marth_Down_Smash_Hitbox_Melee.gif */,
+				FA2A7BD22C2B3E6B008870EC /* Marth_Down_Special_Hitbox_Melee.gif */,
+				FA2A7BD32C2B3E6B008870EC /* Marth_Down_Tilt_Hitbox_Melee.gif */,
+				FA2A7BD42C2B3E6B008870EC /* Marth_Forward_Aerial_Hitbox_Melee.gif */,
+				FA2A7BD52C2B3E6B008870EC /* Marth_Forward_Roll_Hitbox_Melee.gif */,
+				FA2A7BD62C2B3E6B008870EC /* Marth_Forward_Smash_Hitbox_Melee.gif */,
+				FA2A7BD72C2B3E6B008870EC /* Marth_Forward_Tilt_Hitbox_Melee.gif */,
+				FA2A7BD82C2B3E6B008870EC /* Marth_Grab_Hitbox_Melee.gif */,
+				FA2A7BD92C2B3E6B008870EC /* Marth_Neutral_Aerial_Hitbox_Melee.gif */,
+				FA2A7BDA2C2B3E6B008870EC /* Marth_Neutral_Attack_Hitbox_1_Melee.gif */,
+				FA2A7BDB2C2B3E6B008870EC /* Marth_Neutral_Attack_Hitbox_2_Melee.gif */,
+				FA2A7BDC2C2B3E6B008870EC /* Marth_Neutral_Special_Hitbox_Melee.gif */,
+				FA2A7BDD2C2B3E6B008870EC /* Marth_Side_Special_Hitbox_First_Hit_Melee.gif */,
+				FA2A7BDE2C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Fourth_Hit_Down_Melee.gif */,
+				FA2A7BDF2C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Fourth_Hit_Neutral_Side_Melee.gif */,
+				FA2A7BE02C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Fourth_Hit_Up_Melee.gif */,
+				FA2A7BE12C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Second_Hit_Neutral_Side_Down_Melee.gif */,
+				FA2A7BE22C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Second_Hit_Up_Melee.gif */,
+				FA2A7BE32C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Third_Hit_Down_Melee.gif */,
+				FA2A7BE42C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Third_Hit_Neutral_Side_Melee.gif */,
+				FA2A7BE52C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Third_Hit_Up_Melee.gif */,
+				FA2A7BE62C2B3E6B008870EC /* Marth_Spot_Dodge_Hitbox_Melee.gif */,
+				FA2A7BE72C2B3E6B008870EC /* Marth_Up_Aerial_Hitbox_Melee.gif */,
+				FA2A7BE82C2B3E6B008870EC /* Marth_Up_Smash_Hitbox_Melee.gif */,
+				FA2A7BE92C2B3E6B008870EC /* Marth_Up_Special_Hitbox_Melee.gif */,
+				FA2A7BEA2C2B3E6B008870EC /* Marth_Up_Tilt_Hitbox_Melee.gif */,
+			);
+			path = "Marth Animations";
 			sourceTree = "<group>";
 		};
 		FABABC2A2C1B64DB00654DE6 = {
@@ -224,12 +434,12 @@
 			isa = PBXGroup;
 			children = (
 				FA2A7B962C27870A008870EC /* JSONResponseView.swift */,
-				FABABC4C2C1B739800654DE6 /* MeleeCharacterDetailView.swift */,
 				FABABC4A2C1B6EBD00654DE6 /* MeleeCharacterTitleView.swift */,
 				FABABC502C1B74A600654DE6 /* MainBackgroundView.swift */,
 				FA2A7B3F2C2152B2008870EC /* LoadingView.swift */,
 				FA2A7B6A2C248C2A008870EC /* XDismissButton.swift */,
 				FA2A7BA22C2A2216008870EC /* GIFImageView.swift */,
+				FA2A7C292C2B46E9008870EC /* MoveAnimationView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -304,10 +514,70 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2A7C172C2B3E6B008870EC /* Marth_Neutral_Aerial_Hitbox_Melee.gif in Resources */,
+				FA2A7C1C2C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Fourth_Hit_Down_Melee.gif in Resources */,
+				FA2A7C072C2B3E6B008870EC /* fox_rapidjab.gif in Resources */,
+				FA2A7BEC2C2B3E6B008870EC /* fox_backair.gif in Resources */,
+				FA2A7C212C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Third_Hit_Down_Melee.gif in Resources */,
+				FA2A7C202C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Second_Hit_Up_Melee.gif in Resources */,
+				FA2A7C002C2B3E6B008870EC /* fox_forwardsmash.gif in Resources */,
+				FA2A7C1B2C2B3E6B008870EC /* Marth_Side_Special_Hitbox_First_Hit_Melee.gif in Resources */,
+				FA2A7C082C2B3E6B008870EC /* fox_spotdodge.gif in Resources */,
+				FA2A7C252C2B3E6B008870EC /* Marth_Up_Aerial_Hitbox_Melee.gif in Resources */,
+				FA2A7C0C2C2B3E6B008870EC /* Marth_Dash_Attack_Hitbox_Melee.gif in Resources */,
+				FA2A7C0D2C2B3E6B008870EC /* Marth_Dash_Grab_Hitbox_Melee.gif in Resources */,
+				FA2A7BF42C2B3E6B008870EC /* fox_upsmash.gif in Resources */,
+				FA2A7C112C2B3E6B008870EC /* Marth_Down_Tilt_Hitbox_Melee.gif in Resources */,
+				FA2A7BF22C2B3E6B008870EC /* fox_specialneutral.gif in Resources */,
+				FA2A7C132C2B3E6B008870EC /* Marth_Forward_Roll_Hitbox_Melee.gif in Resources */,
+				FA2A7BF82C2B3E6B008870EC /* fox_rollback.gif in Resources */,
+				FA2A7C242C2B3E6B008870EC /* Marth_Spot_Dodge_Hitbox_Melee.gif in Resources */,
+				FA2A7C182C2B3E6B008870EC /* Marth_Neutral_Attack_Hitbox_1_Melee.gif in Resources */,
+				FA2A7BFB2C2B3E6B008870EC /* fox_downsmash.gif in Resources */,
+				FA2A7C0E2C2B3E6B008870EC /* Marth_Down_Aerial_Hitbox_Melee.gif in Resources */,
+				FA2A7C032C2B3E6B008870EC /* fox_forwardtilt_up.gif in Resources */,
 				FABABC3E2C1B64DD00654DE6 /* Preview Assets.xcassets in Resources */,
+				FA2A7C062C2B3E6B008870EC /* fox_jab2.gif in Resources */,
+				FA2A7C102C2B3E6B008870EC /* Marth_Down_Special_Hitbox_Melee.gif in Resources */,
 				FABABC3B2C1B64DD00654DE6 /* Assets.xcassets in Resources */,
+				FA2A7C222C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Third_Hit_Neutral_Side_Melee.gif in Resources */,
+				FA2A7C192C2B3E6B008870EC /* Marth_Neutral_Attack_Hitbox_2_Melee.gif in Resources */,
+				FA2A7C012C2B3E6B008870EC /* fox_forwardtilt_down.gif in Resources */,
+				FA2A7C022C2B3E6B008870EC /* fox_forwardtilt_forward.gif in Resources */,
+				FA2A7BFD2C2B3E6B008870EC /* fox_rollforward.gif in Resources */,
+				FA2A7BEF2C2B3E6B008870EC /* fox_forwardair.gif in Resources */,
+				FA2A7BFF2C2B3E6B008870EC /* fox_specialside.gif in Resources */,
+				FA2A7C272C2B3E6B008870EC /* Marth_Up_Special_Hitbox_Melee.gif in Resources */,
+				FA2A7C1A2C2B3E6B008870EC /* Marth_Neutral_Special_Hitbox_Melee.gif in Resources */,
 				FA2A7B542C22670C008870EC /* GoogleService-Info.plist in Resources */,
-				FA2A7BA62C2A231C008870EC /* FoxDTiltSSBM.gif in Resources */,
+				FA2A7BF72C2B3E6B008870EC /* fox_airdodge.gif in Resources */,
+				FA2A7C262C2B3E6B008870EC /* Marth_Up_Smash_Hitbox_Melee.gif in Resources */,
+				FA2A7C0F2C2B3E6B008870EC /* Marth_Down_Smash_Hitbox_Melee.gif in Resources */,
+				FA2A7BED2C2B3E6B008870EC /* fox_downair.gif in Resources */,
+				FA2A7BF52C2B3E6B008870EC /* fox_specialup.gif in Resources */,
+				FA2A7BEE2C2B3E6B008870EC /* fox_specialdown.gif in Resources */,
+				FA2A7C092C2B3E6B008870EC /* Marth_Air_Dodge_Hitbox_Melee.gif in Resources */,
+				FA2A7C1D2C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Fourth_Hit_Neutral_Side_Melee.gif in Resources */,
+				FA2A7BF32C2B3E6B008870EC /* fox_upair.gif in Resources */,
+				FA2A7C142C2B3E6B008870EC /* Marth_Forward_Smash_Hitbox_Melee.gif in Resources */,
+				FA2A7C122C2B3E6B008870EC /* Marth_Forward_Aerial_Hitbox_Melee.gif in Resources */,
+				FA2A7C152C2B3E6B008870EC /* Marth_Forward_Tilt_Hitbox_Melee.gif in Resources */,
+				FA2A7C162C2B3E6B008870EC /* Marth_Grab_Hitbox_Melee.gif in Resources */,
+				FA2A7BFA2C2B3E6B008870EC /* fox_dashgrab.gif in Resources */,
+				FA2A7C282C2B3E6B008870EC /* Marth_Up_Tilt_Hitbox_Melee.gif in Resources */,
+				FA2A7C0B2C2B3E6B008870EC /* Marth_Back_Roll_Hitbox_Melee.gif in Resources */,
+				FA2A7C052C2B3E6B008870EC /* fox_jab1.gif in Resources */,
+				FA2A7BFE2C2B3E6B008870EC /* fox_specialside_aerial.gif in Resources */,
+				FA2A7C232C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Third_Hit_Up_Melee.gif in Resources */,
+				FA2A7BFC2C2B3E6B008870EC /* fox_downtilt.gif in Resources */,
+				FA2A7BF62C2B3E6B008870EC /* fox_uptilt.gif in Resources */,
+				FA2A7BF12C2B3E6B008870EC /* fox_specialneutral_aerial.gif in Resources */,
+				FA2A7C042C2B3E6B008870EC /* fox_grab.gif in Resources */,
+				FA2A7C1F2C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Second_Hit_Neutral_Side_Down_Melee.gif in Resources */,
+				FA2A7C1E2C2B3E6B008870EC /* Marth_Side_Special_Hitbox_Fourth_Hit_Up_Melee.gif in Resources */,
+				FA2A7BF92C2B3E6B008870EC /* fox_dashattack.gif in Resources */,
+				FA2A7BF02C2B3E6B008870EC /* fox_neutralair.gif in Resources */,
+				FA2A7C0A2C2B3E6B008870EC /* Marth_Back_Aerial_Hitbox_Melee.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +615,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2A7B372C2105C7008870EC /* MeleeHelpViewModel.swift in Sources */,
+				FA2A7C2A2C2B46E9008870EC /* MoveAnimationView.swift in Sources */,
 				FA2A7B672C23F540008870EC /* HelpResponseView.swift in Sources */,
 				FA2A7BA32C2A2216008870EC /* GIFImageView.swift in Sources */,
 				FA2A7B3B2C210785008870EC /* OpenAIService.swift in Sources */,
@@ -364,6 +635,7 @@
 				FA2A7AF02C1D5BE6008870EC /* MeleeHelpView.swift in Sources */,
 				FA2A7AE72C1C09C9008870EC /* MeleeImageView.swift in Sources */,
 				FABABC542C1B777500654DE6 /* MeleeCharacterGridViewModel.swift in Sources */,
+				FA2A7BAC2C2B3D92008870EC /* PostMatchView.swift in Sources */,
 				FABABC512C1B74A600654DE6 /* MainBackgroundView.swift in Sources */,
 				FA2A7B402C2152B2008870EC /* LoadingView.swift in Sources */,
 				FA2A7B6B2C248C2A008870EC /* XDismissButton.swift in Sources */,
@@ -507,12 +779,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Melee-Helper/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "SSBM Coach";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need to use your camera to detect a character";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -539,12 +812,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Melee-Helper/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "SSBM Coach";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need to use your camera to detect a character";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
