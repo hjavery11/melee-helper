@@ -273,6 +273,7 @@
 		FA2A7BA42C2A2304008870EC /* Gifs */ = {
 			isa = PBXGroup;
 			children = (
+				FA2A7C2B2C2B5292008870EC /* Bowser Animations */,
 				FA2A7BCA2C2B3E6B008870EC /* Fox Animations */,
 				FA2A7BEB2C2B3E6B008870EC /* Marth Animations */,
 			);
@@ -360,6 +361,13 @@
 				FA2A7BEA2C2B3E6B008870EC /* Marth_Up_Tilt_Hitbox_Melee.gif */,
 			);
 			path = "Marth Animations";
+			sourceTree = "<group>";
+		};
+		FA2A7C2B2C2B5292008870EC /* Bowser Animations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Bowser Animations";
 			sourceTree = "<group>";
 		};
 		FABABC2A2C1B64DB00654DE6 = {

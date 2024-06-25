@@ -17,7 +17,7 @@ struct MoveAnimationView: View {
           
             // Create a URL from the optional path
             if let path = Bundle.main.path(forResource: gifURL.lowercased(), ofType: "gif"),
-               let url = URL(string: path) {  // Ensure URL is valid
+               let _ = URL(string: path) {  // Ensure URL is valid
                 KFAnimatedImage(URL(filePath: path))
                     .scaledToFit()
                     .frame(width: 300, height: 300)

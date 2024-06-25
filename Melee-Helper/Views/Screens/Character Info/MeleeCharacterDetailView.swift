@@ -26,11 +26,19 @@ struct MeleeCharacterDetailView: View {
                     .padding()
                 
                 
-                
-                ForEach(character.moveSet){ move in
-                    MoveAnimationView(gifURL: move.moveAnimationURL)
-                        .frame(width: 300, height: 300)
+                VStack{
+                    ForEach(character.moveSet){ move in
+                        VStack{
+                            Text(move.moveName)
+                                .font(.title2)
+                            MoveAnimationView(gifURL: move.moveAnimationURL)
+                                .frame(width: 300, height: 300)
+                        }
+                       
+                    }
                 }
+               
+               
                 
                 
             }

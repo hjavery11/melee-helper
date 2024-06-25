@@ -22,38 +22,38 @@ struct Character:Identifiable, Hashable {
         let moveName: String
         let moveAnimationURL: String
         
-        enum MeleeMoves: CaseIterable {
-            case uptilt
-            case downtilt
-            case forwardtilt
-            case forwardtilt_down
-            case forwardtilt_forward
-            case forwardtilt_up
-            case upair
-            case downair
-            case forwardair
-            case backair
-            case neutralair
-            case upsmash
-            case downsmash
-            case forwardsmash
-            case grab
-            case dashgrab
-            case jab1
-            case jab2
-            case rapidjab
-            case dashattack
-            case shield
-            case rollforward
-            case rollback
-            case spotdodge
-            case airdodge
-            case specialneutral
-            case specialneutral_aerial
-            case specialup
-            case specialdown
-            case specialside
-            case specialside_aerial
+        enum MeleeMoves: String, CaseIterable {
+            case uptilt = "Up Tilt"
+            case downtilt = "Down Tilt"
+            case forwardtilt = "Forward Tilt"
+            case forwardtilt_down = "Forward Tilt Down"
+            case forwardtilt_forward = "Forward Tilt Forward"
+            case forwardtilt_up = "Forward Tilt Up"
+            case upair = "Up Air"
+            case downair = "Down Air"
+            case forwardair = "Forward Air"
+            case backair = "Back Air"
+            case neutralair = "Neutral Air"
+            case upsmash = "Up Smash"
+            case downsmash = "Down Smash"
+            case forwardsmash = "Forward Smash"
+            case grab = "Grab"
+            case dashgrab = "Dash Grab"
+            case jab1 = "Jab 1"
+            case jab2 = "Jab 2"
+            case rapidjab = "Rapid Jab"
+            case dashattack = "Dash Attack"
+            case shield = "Shield"
+            case rollforward = "Roll Forward"
+            case rollback = "Roll Back"
+            case spotdodge = "Spot Dodge"
+            case airdodge = "Air Dodge"
+            case specialneutral = "Special Neutral"
+            case specialneutral_aerial = "Special Neutral Aerial"
+            case specialup = "Special Up"
+            case specialdown = "Special Down"
+            case specialside = "Special Side"
+            case specialside_aerial = "Special Side Aerial"
         }
     }
     
@@ -63,7 +63,7 @@ struct Character:Identifiable, Hashable {
         self.description = description
         
         self.moveSet = Move.MeleeMoves.allCases.map{ meleeMove in
-            Move(moveName: "\(meleeMove)", moveAnimationURL: "\(name)_\(meleeMove)")
+            Move(moveName: "\(meleeMove.rawValue)", moveAnimationURL: "\(name)_\(meleeMove)")
         }
     }
 
