@@ -16,13 +16,15 @@ struct MeleeHelpView: View {
   
     @StateObject private var viewModel = MeleeHelpViewModel()
     @State private var showAnswer = false
+    @State private var generateGameplan = false
     
+    @Environment(\.colorScheme) var colorScheme
    
   
     
     var body: some View {
         NavigationStack {
-            VStack(spacing:50){
+            VStack(spacing:70){
                 HStack(spacing:50){
                     Button{
                         viewModel.showUserPicker.toggle()
@@ -65,30 +67,42 @@ struct MeleeHelpView: View {
                     
                 }
                 
-                
-                
-                
-                Picker("Help", selection: $viewModel.helpType){
-                    ForEach(HelpType.allCases) { helpType in
-                        Text(helpType.rawValue.capitalized)
+                VStack{
+                    HStack{
+                        Text("Skill Level")
+                            .font(.title2)
+                        Spacer()
+                        Picker("Skill Level", selection: $viewModel.skillType){
+                            ForEach(SkillType.allCases) { helpType in
+                                Text(helpType.rawValue.capitalized)
+                            }
+                        }
+                   
+                   
+                      
+                    }
+                    .padding(.bottom, 0)
+                    HStack{
+                        Text("Help Type")
+                            .font(.title2)
+                   Spacer()
+                        Picker("Help", selection: $viewModel.helpType){
+                            ForEach(HelpType.allCases) { helpType in
+                                Text(helpType.rawValue.capitalized)
+                            }
+                        }
+                       
                     }
                 }
-                .pickerStyle(.segmented)
+                .frame(width: 300)
+                .pickerStyle(.menu)
+                .tint(Color(.label))
+                
+               
+               
                
                 
-                HStack{
-                    Text("Skill Level:")
-                        .font(.title2)
-                    Spacer()
-                    Picker("Skill Level", selection: $viewModel.skillType){
-                        ForEach(SkillType.allCases) { helpType in
-                            Text(helpType.rawValue.capitalized)
-                        }
-                    }
-                    .pickerStyle(.menu)
-                    .tint(Color(.label))
-                    Spacer()
-                }
+               
                
                 
               
@@ -115,10 +129,22 @@ struct MeleeHelpView: View {
                 
             }
             .padding()
-            .navigationTitle("Melee AI Helper")
-          
-
-            
+            .toolbar {
+                              ToolbarItem(placement: .principal) {
+                                  HStack {
+                                 
+                                      Text("Melee Coach")
+                                          .font(.largeTitle)
+                                      Image("ssbm_icon")
+                                          .resizable()
+                                          .scaledToFit()
+                                          .frame(height: 30)
+                                          .padding(.leading, colorScheme == .dark ? 0:10)
+                                      Spacer()
+                                  }
+                            
+                              }
+                          }
         }
         .padding()
     }

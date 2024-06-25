@@ -11,7 +11,10 @@ import OpenAI
 import UIKit
 
 enum HelpType: String, CaseIterable, Identifiable {
-    case neutral, punish, defense
+   case gameplan = "Basic Gameplan"
+    case neutral = "Neutral Game"
+    case punish = "Punish Game"
+    case defense = "Defensive Play"
     var id: Self { self }
 }
 
@@ -35,7 +38,7 @@ enum SkillType: String, CaseIterable, Identifiable {
     
     @Published var userCharacter: Character = CharacterData.allCharacters[5]
     @Published var enemyCharacter: Character = CharacterData.allCharacters[10]
-    @Published var helpType: HelpType = .neutral
+    @Published var helpType: HelpType = .gameplan
     @Published var skillType: SkillType = .intermediate
     
     private var currentQuery: MeleeQuery?
@@ -137,11 +140,9 @@ struct MeleeQuery {
     var enemyCharacter: Character
     var helpType: HelpType
     var skillLevel: SkillType
+    var helpMessage: String
     
-    var firstMessage: String {
-        "I am playing \(userCharacter) against \(enemyCharacter). Give me advice in this matchup specifically around the area of \(helpType)"
-    }
-  
+
     
     
     var messageHistory: [ChatQuery.ChatCompletionMessageParam]
@@ -152,12 +153,24 @@ struct MeleeQuery {
         self.helpType = helpType
         self.skillLevel = skillLevel
         
+        switch self.helpType {
+        case .defense:
+            self.helpMessage = "Give me advice specfically around defense and defensive play."
+        case .gameplan:
+            self.helpMessage = "Generate a basic gameplan for me to follow to win this matchup."
+        case .neutral:
+            self.helpMessage = "Give me advice specfically around neutral game."
+        case .punish:
+            self.helpMessage = "Give me advice specfically around punish game."
+        }
+        
         self.messageHistory = [
+            .system(.init(content: "You are an expert super smash bros. melee coach. You will be given the user's melee character, their opponents character,the type of advice they want, and their general skill level. Give a response back that is specific to the type they wanted and in the matchup they are playing. Do not give any information or answer any questions that dont directly apply to super smash brothers melee. If they ask something unrelated, return a simple message only using the overview field telling them why you couldn't answer their question. Return any responses back in JSON format that conforms to this model so it always decodable: \(exampleJSONString)")),
             
-            .system(.init(content: "You are an expert super smash bros. melee tutor. You will be given the user's melee character, their opponents character, and then the type of advice they want. Give a response back that is specific to the type they wanted and in the matchup they are playing. Do not give any information or answer any questions that dont directly apply to super smash brothers melee. If they ask something unrelated, return a simple message only using the overview field telling them why you couldn't answer their question. Return any responses back in JSON format that conforms to this model so it always decodable: \(exampleJSONString)")),
-            
-            .user(.init(content: .string("I am playing \(userCharacter.name) against \(enemyCharacter.name). Give me advice in this matchup specifically around the area of \(helpType). Keep your advice helpful to a player of my skill level of: \(skillLevel)")))
+            .user(.init(content: .string("I am playing \(userCharacter) against \(enemyCharacter). \(helpMessage) Keep your advice helpful to a player of my skill level of: \(skillLevel)")))
         ]
+        
+      
     }
     
     
