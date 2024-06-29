@@ -43,12 +43,7 @@ struct HelpResponseView: View {
                     
                 }
                 .scrollDismissesKeyboard(.immediately)
-            }
-            .onTapGesture {
-                withAnimation{
-                    expandTextField = false
-                }
-            }
+            }     
             .padding(.top,70)
             .padding(.bottom,20)
             .overlay(alignment: .topLeading) {
@@ -61,14 +56,7 @@ struct HelpResponseView: View {
                     Spacer()
                     
                     HStack {
-                        if expandTextField {
-                            TextField("Enter a follow-up question", text: $userQuestion, onEditingChanged: { editingChanged in
-                                if !editingChanged && userQuestion.isEmpty {
-                                    withAnimation {
-                                        expandTextField = false
-                                    }
-                                }
-                            })
+                        TextField("Enter a follow-up question", text: $userQuestion)
                             .padding(.leading, 10)
                             .submitLabel(.search)
                             .disabled(viewModel.isLoading)
@@ -81,30 +69,18 @@ struct HelpResponseView: View {
                                     userQuestion = ""
                                 }
                             }
-                        }
+                            .transition(.slide)
+                            .animation(.easeInOut, value: expandTextField)
+                        
                         
                         Button {
-                            if expandTextField {
-                                if !userQuestion.isEmpty {
-                                    viewModel.getFollowUpResponse(followUpQuestion: userQuestion)
-                                    userQuestion = ""
-                                } else {
-                                    withAnimation {
-                                        expandTextField.toggle()
-                                        isFocused = false
-                                    }
-                                }
-                            } else {
-                                withAnimation {
-                                    expandTextField.toggle()
-                                    isFocused = true
-                                }
-                            }
+                            //mangifying glass click code
+                            expandTextField.toggle()
                         } label: {
                             Image(systemName: "magnifyingglass")
                                 .tint(Color(.label))
                                 .imageScale(.large)
-                                .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+                                .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: expandTextField ? 10:40))
                         }
                         .keyboardShortcut(.defaultAction)
                     }
