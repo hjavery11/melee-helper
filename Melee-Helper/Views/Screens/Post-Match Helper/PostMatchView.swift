@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct PostMatchView: View {
+    
+    @State var responseString: String = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(responseString)
+            .task {
+                await testGPT()
+            }
+    }
+    
+    
+    
+    
+    private func testGPT() async {
+      let response = try? await NetworkManager.shared.fetchCompletion()
+        responseString = response?.choices[0].message.content ?? ""
+     
     }
 }
 
