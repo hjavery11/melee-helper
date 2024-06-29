@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftUI
-import OpenAI
 import UIKit
 
 enum HelpType: String, CaseIterable, Identifiable {
@@ -28,7 +27,6 @@ enum SkillType: String, CaseIterable, Identifiable {
 @MainActor class MeleeHelpViewModel: ObservableObject {
     
     
-    private var openAI = OpenAIService()
    
     @Published var showUserPicker = false
     @Published var showEnemyPicker = false
@@ -56,11 +54,13 @@ enum SkillType: String, CaseIterable, Identifiable {
         
         responseTask = Task {
             do {              
-                let response = try await openAI.fetchChatCompletion(messages: query.messageHistory, newChat: true)
+            //    let response = try await openAI.fetchChatCompletion(messages: query.messageHistory, newChat: true)
+                let response = try await NetworkManager.shared.fetchCompletion(messages: query.messageHistory)
                 // Only update the response if the taskID matches the currentTaskID
                 if taskID == currentTaskID {
-                    self.response = response
-                    self.currentQuery?.appendResponseMessage(response)
+                    let responseString = response.choices[0].message.content
+                    self.response = responseString
+                    self.currentQuery?.appendResponseMessage(responseString)
                 }
             } catch {
                 // Only update the response if the taskID matches the currentTaskID
@@ -85,16 +85,16 @@ enum SkillType: String, CaseIterable, Identifiable {
         
         responseTask = Task {
             do {
-                var responseString = try await openAI.fetchChatCompletion(messages: query.messageHistory, newChat: false)
-                
+                let responseObject = try await NetworkManager.shared.fetchCompletion(messages: query.messageHistory)
                 // Only update the response if the taskID matches the currentTaskID
                 if taskID == currentTaskID {
-                    if ResponseBuilder().parseJSON(rawString: responseString) == nil {
-                        print("json decoding failed in openAIService. Attempting to resubmit")
-                        let retryMessage = ChatQuery.ChatCompletionMessageParam(role: .user, content: "This did not follow the correct JSON format I gave you. Return it following the correct format.")
-                        query.messageHistory.append(retryMessage!)
-                        responseString = try await openAI.fetchChatCompletion(messages: query.messageHistory, newChat: false)
-                    }
+                    let responseString = responseObject.choices[0].message.content
+//                    if ResponseBuilder().parseJSON(rawString: responseString) == nil {
+//                        print("json decoding failed in openAIService. Attempting to resubmit")
+//                        let retryMessage = ChatQuery.ChatCompletionMessageParam(role: .user, content: "This did not follow the correct JSON format I gave you. Return it following the correct format.")
+//                        query.messageHistory.append(retryMessage!)
+//                        responseString = try await openAI.fetchChatCompletion(messages: query.messageHistory, newChat: false)
+//                    }
                     self.response = responseString
                     query.appendResponseMessage(responseString)
                     self.currentQuery = query
@@ -138,7 +138,7 @@ struct MeleeQuery {
 
     
     
-    var messageHistory: [ChatQuery.ChatCompletionMessageParam]
+    var messageHistory: [Message]
     
     init(userCharacter: Character, enemyCharacter: Character, helpType: HelpType, skillLevel: SkillType) {
         self.userCharacter = userCharacter
@@ -158,9 +158,8 @@ struct MeleeQuery {
         }
         
         self.messageHistory = [
-            .system(.init(content: "You are an expert super smash bros. melee coach. You will be given the user's melee character, their opponents character,the type of advice they want, and their general skill level. Give a response back that is specific to the type they wanted and in the matchup they are playing. Do not give any information or answer any questions that dont directly apply to super smash brothers melee. If they ask something unrelated, return a simple message only using the overview field telling them why you couldn't answer their question. Return any responses back in JSON format that conforms to this model so it always decodable: \(exampleJSONString)")),
-            
-            .user(.init(content: .string("I am playing \(userCharacter) against \(enemyCharacter). \(helpMessage) Keep your advice helpful to a player of my skill level of: \(skillLevel)")))
+            Message(role: OpenAIRole.system.rawValue, content: "You are an expert super smash bros. melee coach. You will be given the user's melee character, their opponents character,the type of advice they want, and their general skill level. Give a response back that is specific to the type they wanted and in the matchup they are playing. Do not give any information or answer any questions that dont directly apply to super smash brothers melee. If they ask something unrelated, return a simple message only using the overview field telling them why you couldn't answer their question. Return any responses back in JSON format that conforms to this model so it always decodable: \(exampleJSONString)"),
+            Message(role: OpenAIRole.user.rawValue, content: "I am playing \(userCharacter) against \(enemyCharacter). \(helpMessage) Keep your advice helpful to a player of my skill level of: \(skillLevel)")
         ]
         
       
@@ -168,11 +167,11 @@ struct MeleeQuery {
     
     
     mutating func appendUserMessage(_ message: String) {
-        self.messageHistory.append(.user(.init(content: .string(message))))
+        self.messageHistory.append(Message(role: OpenAIRole.user.rawValue, content: message))
     }
     
     mutating func appendResponseMessage(_ message: String) {
-        self.messageHistory.append(.assistant(.init(content: message)))
+        self.messageHistory.append(Message(role: OpenAIRole.assistant.rawValue, content: message))
     }
 }
 

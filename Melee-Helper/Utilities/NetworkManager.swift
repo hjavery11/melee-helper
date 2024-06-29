@@ -18,7 +18,7 @@ class NetworkManager {
     let completionsURL = "https://api.openai.com/v1/chat/completions"
     
     
-    func fetchCompletion() async throws -> OpenAIResponse {
+    func fetchCompletion(messages: [Message]) async throws -> OpenAIResponse {
         guard let url = URL(string: completionsURL) else {
             //invalid url
             throw NSError(domain: "OpenAIErrorDomain", code: 1, userInfo: [NSLocalizedDescriptionKey: "OpenAI URL Incorrect"])
@@ -35,9 +35,9 @@ class NetworkManager {
             request.allHTTPHeaderFields = [
                 "Authorization" : "Bearer \(apiKey ?? "")"
             ]
-            request.httpBody = try JSONEncoder().encode(OpenAIRequest(model: .gpt4_0, messages: [Message(role: OpenAIRole.user.rawValue, content: "What is the current day and time?")]))
+            request.httpBody = try JSONEncoder().encode(OpenAIRequest(model: .gpt4_0, response_format: ResponseFormat(type: "json_object"), messages: messages))
             
-            let (data, response) = try await URLSession.shared.data(for: request)
+            let (data, _) = try await URLSession.shared.data(for: request)
             
             let responseValue = String(data: data, encoding: .utf8)
             print(responseValue ?? "No response")
@@ -66,6 +66,7 @@ class NetworkManager {
 
 //{
 //    "model": "gpt-3.5-turbo",
+//    "response_format": { "type": "json_object" },
 //    "messages": [
 //      {
 //        "role": "system",
@@ -104,9 +105,13 @@ struct Message: Codable {
 
 struct OpenAIRequest: Codable{
     let model: OpenAIModel
+    let response_format: ResponseFormat
     let messages: [Message]
     
-    
+}
+
+struct ResponseFormat: Codable{
+    let type:String
 }
 
 //{
