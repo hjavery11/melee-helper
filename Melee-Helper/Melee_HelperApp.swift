@@ -10,6 +10,7 @@ import FirebaseCore
 import Firebase
 
 
+
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
@@ -21,7 +22,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct Melee_HelperApp: App {
-    
     // register app delegate for Firebase setup
      @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
@@ -29,5 +29,6 @@ struct Melee_HelperApp: App {
         WindowGroup {
             MeleeHomeScreenView()
         }
+        
     }
 }

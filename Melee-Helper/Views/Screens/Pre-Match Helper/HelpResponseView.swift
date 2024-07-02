@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HelpResponseView: View {
+struct HelpResponseView: View {    
     
     @ObservedObject var viewModel: MeleeHelpViewModel
     @Environment(\.dismiss) var dismiss

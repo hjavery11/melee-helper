@@ -53,8 +53,7 @@ enum SkillType: String, CaseIterable, Identifiable {
         isLoading = true
         
         responseTask = Task {
-            do {              
-            //    let response = try await openAI.fetchChatCompletion(messages: query.messageHistory, newChat: true)
+            do {
                 let response = try await NetworkManager.shared.fetchCompletion(messages: query.messageHistory)
                 // Only update the response if the taskID matches the currentTaskID
                 if taskID == currentTaskID {
@@ -125,8 +124,11 @@ enum SkillType: String, CaseIterable, Identifiable {
         userCharacter = storedEnemyCharacter
         enemyCharacter = storedUserCharacter
     }
+                
+
     
 }
+
 
 struct MeleeQuery {
     var userCharacter: Character

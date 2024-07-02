@@ -7,11 +7,23 @@
 
 import SwiftUI
 
+
 struct PostMatchView: View {
+
     
     var body: some View {
-        
-        Text("Hello")
+        Text("Test")
+//        NavigationStack{
+//            List {
+//                ForEach(history) { chat in
+//                    HStack {
+//                        Text("\(chat.character1) vs. \(chat.character2) - \(chat.helpType)")
+//                    }
+//                    
+//                }
+//            }
+//            .navigationTitle("History")
+//        }
     
 
     }
